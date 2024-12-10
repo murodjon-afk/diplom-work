@@ -1,156 +1,181 @@
 @media (max-width: 768px) {
-  *{
-      margin: 0%;
-      padding: 0%;
-      box-sizing: border-box;
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
-.banner-parent {
 
-  width: 100%;
-  height: 100%;
-  max-width: 700px;
-  margin: 30px auto;
-  max-height: 300px;
- 
-  background-size: 100% 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-}
+  .categorys , .category-text {
+    margin-left: 100px;
+    }
 
-.clothes, .shoes, .technieque {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); 
-  gap: 48px;
-  padding: 20px;
-  justify-items: center;
-  grid-template-rows: repeat(1);
-}
+  .banner-parent {
 
-.uzum-section {
-  max-width: 100%; 
-  width: 100vw; 
-  margin: 0; 
-  padding: 0;
-}
+    max-width: 90%;
+    height: 300px;
+    margin: 0 auto;
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 12px;
+  }
 
-header {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  padding: 10px 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
+  .clothes, .shoes, .technieque {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 48px;
+    padding: 20px;
+    justify-items: center;
+    grid-template-rows: repeat(1);
+  }
 
-.profile-info {
-  justify-content: center;
-  gap: 5px;
-}
+  .second-banner{
+   max-width: 700px;
+    height: 350px;
+  }
 
-.banner-parent {
-  height: 250px;
-}
+  .uzum-section {
+    max-width: 100%;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+  }
 
-.favorite{
-  width: 20px;
-  height: 20px;
-}
+  header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
 
-.title{
-  font-size: 20px;
-}
+  .profile-info {
+    justify-content: center;
+    gap: 5px;
+  }
 
-.old-price ,.price{
-  font-size: 20px;
-}
+  .banner-parent {
+    height: 250px;
+  }
 
+  .favorite {
+    width: 20px;
+    height: 20px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .old-price, .price {
+    font-size: 20px;
+  }
 }
 
 @media (min-width: 0px) {
-  .catalog{
-      display: none;
+  .catalog {
+    display: none;
   }
-  .profile-info{
-      display: none;
+
+  .profile-info {
+    display: none;
   }
+
   header {
-    flex-direction: column;
+    flex-direction: row;
     gap: 10px;
   }
 
-
   .banner-parent {
-    width: 90%;
-    height: 300px; 
-      margin: 30px auto;
-      background-size: 100% 100%;
-      background-position: center;
-      background-repeat: no-repeat;
-   
+    width: 100%;
+    height: 300px;
+    margin: 30px auto;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 
   .card {
-    min-width: 100%;
+    width: 100%;
     margin: auto;
   }
 
+  .img-container {
+    height: 300px;
+  }
+
+  .img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
   .price {
-    font-size: 14px;
+    font-size: 18px;
   }
 
   .clothes-text, .shoes-text, .technieque-text {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding: 10px 0;
   }
 }
 
 @media (min-width: 1130px) {
-  .catalog{
-      display: block;
+  .catalog {
+    display: block;
   }
-  .profile-info{
-      display: flex;
-      padding-bottom: 10px;
+
+  .burger-btn {
+    display: none;
   }
+
+  .profile-info {
+    display: flex;
+    padding-bottom: 10px;
+  }
+
   header {
-    flex-direction: row; 
+    flex-direction: row;
     padding: 20px;
   }
 
-  .banner-parent {
-    width: 1000px; 
-    height: 400px; 
-    margin-top: 40px; 
-    border-radius: 30px; 
+  .header-child{
+    flex-direction: row;
   }
-  
+
+ 
+
+  .banner-parent {
+    width: 80%;
+    height: 400px;
+    margin-top: 40px;
+    border-radius: 12px;
+    background-size: 100% 100%;
+  }
 
   .catalog {
-    font-size: 1.2rem; 
-    padding: 12px 25px; 
+    font-size: 1.2rem;
+    padding: 12px 25px;
   }
 
   .products-category {
-    padding-top: 84px; 
+    padding-top: 84px;
     max-width: 1144px;
     margin: auto;
   }
 
   .clothes, .shoes, .technieque {
-    grid-template-columns: repeat(auto-fill, minmax(253px, 1fr)); 
-    gap: 48px; 
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 48px;
   }
 
   .card {
-    width: 100%;
-    min-width: 253px; 
     margin: 0;
-    background: #fff; 
   }
 
-  .img-container img {
-    height: 250px;
+  .img-container {
+    height: 300px;
   }
 
   footer {
@@ -161,135 +186,172 @@ header {
   }
 
   .footer-column {
-    width: 30%; 
+    width: 30%;
   }
 
+  
+
   .footer-legal {
-    font-size: 14px; 
+    font-size: 14px;
   }
 }
 
-@media (max-width: 626px) {
+
+@media (max-width: 1130px){
+  .search-container{
+    width: 100%;
+  }
+  .catalog-container{
+    width: 100%;
+  }
+}
+
+@media (max-width: 1182px){
+  .catalog-container{
+    width: 107%;
+  }
+}
+
+@media (max-width: 650px) {
   input[type="search"] {
     width: 500px;
   }
 
+  
+
   .clothes, .shoes, .technieque {
     display: grid;
-    grid-template-columns: repeat(2, minmax(230px, 1fr)); 
+    grid-template-columns: repeat(2, minmax(190px, 1fr));
     gap: 48px;
     padding: 20px;
     justify-items: center;
-    grid-template-rows: repeat(1);
   }
 
   .banner-parent {
-    width: 600px;
-    height: 400px;
-    background-size: cover;
-    background-repeat: no-repeat;
+    width: 100%;
+    max-width: 600px;
+    height: 300px;
     background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
     margin-top: 20px;
+    gap: 90%;
   }
 
+  
+
   .card {
-    width: 100%;
-    max-width: 150px;
     margin: 0 auto;
+  }
+
+  
+  .title{
+    font-size: 16px;
+  }
+
+  .price{
+    font-size: medium;
+  }
+
+  .old-price{
+    font-size: small;
+  }
+
+  .save-text{
+    font-size:medium;
   }
 
   .img-container {
     width: 100%;
     height: 300px;
     overflow: hidden;
-    border-radius: 12px 12px 0 0;
+    border-radius: 10px;
   }
 
   .img-container img {
     width: 100%;
-    height: 400px;
+    height: 100%;
     object-fit: cover;
   }
 }
-@media (max-width: 1130px) {
- .menu{
-  display: flex;
-  justify-content: center;
-  align-items: center;
- position: fixed;
- top: 705px;
 
- }
-}
 @media (max-width: 600px) {
-.banner-parent{
-  width: 510px;
-  height: 300px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  margin-top: 20px;
-}
-
-.clothes, .shoes, .technieque {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(230px, 1fr)); 
-  gap: 48px;
-  padding: 20px;
-  justify-items: center;
-  grid-template-rows: repeat(1);
-}
-
-.favorite{
-  width: 20px;
-  height: 20px;
-}
-
-.title{
-  font-size: 20px;
-}
-
-.old-price ,.price{
-  font-size: 18px;
-}
-}
-
-@media (max-width: 526px) {
   .banner-parent {
     width: 100%;
-    max-width: 500px;
+    max-width: 550px;
     height: 250px;
     background-size: cover;
     background-size: 100% 100%;
     background-repeat: no-repeat;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80%;
+  }
+
+
+  .title{
+    font-size: 14px;
+  }
+
+  .price{
+    font-size: small;
+  }
+
+  .old-price{
+    font-size: smaller;
+  }
+
+  .save-text{
+    font-size: small;
+  }
+}
+
+@media (max-width: 556px) {
+  .header-child {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .banner-parent {
+    width: 100%;
+    max-width: 500px;
+    height: 250px;
+    background-size: 100% 100%;
     background-position: center;
+    background-repeat: no-repeat;
     margin-top: 30px;
+  }
+
+  .title{
+    font-size: 13px;
+  }
+
+  .price{
+    font-size: 13px;
+  }
+
+  .old-price{
+    font-size: 12px;
+  }
+
+  .save-text{
+    font-size: 10px;
   }
 
   input[type="search"] {
     width: 100%;
     max-width: 400px;
   }
-  .menu{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-   position: fixed;
-   top: 715px;
-  
-   }
 
-  .menu-item svg {
-    width: 30px; 
-    height: 30px;
-  }
-  .menu a{
-    font-size: 12px;
+  .search-text{
+    margin-left: 50px;
+    font-size: 15px;
   }
 
-  .clothes,
-  .shoes,
-  .technieque {
+  .clothes, .shoes, .technieque {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 20px;
@@ -298,8 +360,6 @@ header {
   }
 
   .card {
-    width: 100%;
-    max-width: 250px;
     margin: 0 auto;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
@@ -308,76 +368,373 @@ header {
     width: 100%;
     height: auto;
   }
+
+  .search-container{
+    height: 200px;
+  }
 }
 
 @media (max-width: 430px) {
-  .clothes,
-  .shoes,
-  .technieque {
+  .clothes, .shoes, .technieque {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-columns: repeat(2, minmax(150px, 1fr));
     gap: 20px;
     padding: 10px;
     justify-items: center;
   }
 
-  .img-container img {
-    width: 100%;
-    height: auto;
+  .search-text{
+    margin-left: 30px;
+    font-size: 15px;
+  }
+  .biznes{
+    font-size: small;
   }
 
-  .img-container {
-    width: 100%;
-    height: auto;
+
+  .title{
+    font-size: 11px;
   }
+
+  .price{
+    font-size: 10px;
+  }
+
+  .old-price{
+    font-size: 10px;
+  }
+
+  .save-text{
+    font-size: 8.5px;
+  }
+  .categorys , .category-text {
+    margin-left: 20px;
+    }
 
   .banner-parent {
     width: 100%;
     max-width: 400px;
     height: 200px;
-    background-size: cover;
     background-size: 100% 100%;
-    background-repeat: no-repeat;
     background-position: center;
+    background-repeat: no-repeat;
     margin-top: 35px;
-  }
-
-  .menu{
     display: flex;
     justify-content: center;
     align-items: center;
-   position: fixed;
-   top: 726px;
-  
-   }
-
-  .menu-item svg {
-    width: 23px; 
-    height: 23px;
-  }
-  .menu a{
-    font-size: 9px;
+    gap: 80%;
   }
 
-  .footer-legal a {
+  .footer-legal a, .footer-apps h4, .footer-socials h4, .footer-column h4, .footer-column a {
     font-size: 15px;
+    padding: 0 5px;
   }
 
-  .footer-apps h4 , .footer-socials h4{
-    font-size: 15px;
-  }
-
-  .footer-column h4 {
-    font-size: 16px;
-    padding-left: 5px;
-    padding-right: 5px;
-    font-size: small;
-  }
-
-  .footer-column a{
-    font-size: 16px;
-    padding-left: 5px;
-    padding-right: 5px;
-    font-size: small;
+  footer {
+    width: 100%;
+    max-width: 430px;
   }
 }
+
+@media (max-width: 410px) {
+  .clothes, .shoes, .technieque {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 10px;
+    justify-items: center;
+  }
+
+
+  
+  .title{
+    font-size: 15px;
+  }
+
+  .price{
+    font-size: 14px;
+  }
+
+  .old-price{
+    font-size: 13px;
+  }
+
+  .save-text{
+    font-size: 12px;
+  }
+  .banner-parent {
+    width: 100%;
+    max-width: 390px;
+    height: 200px;
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80%;
+  }
+
+  .img-container img {
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+@media (max-width: 1120px){
+  .catalog-container{
+    width: 107%;
+  }
+}
+
+
+@media (max-width: 1130px) {
+  .catalog-container {
+    width: 100%;
+  }
+  .second-banner{
+    width: 1000px;
+  }
+  .banner-parent{
+    width: 1000px;
+    height: 400px;
+  }
+}
+
+@media (max-width: 1182px) {
+  .catalog-container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1016px) {
+  .second-banner{
+    width: 900px;
+    height: 390px;
+  }
+  .banner-parent{
+    width: 900px;
+    height: 390px;
+  }
+}
+@media (max-width: 916px){
+  .second-banner{
+    width: 850px;
+    height: 380px;
+  }
+  .banner-parent{
+    width: 850px;
+    height: 380px;
+  }
+}
+
+
+@media (max-width: 862px){
+  .second-banner{
+    width: 800px;
+    height: 350px;
+  }
+  .banner-parent{
+    width: 800px;
+    height: 350px;
+  }
+}
+
+@media (max-width: 813px){
+  .second-banner{
+    width: 750px;
+    height: 300px;
+  }
+  .banner-parent{
+    width: 750px;
+    height: 300px;
+  }
+}
+
+
+@media (max-width: 705px){
+  .second-banner{
+    width: 650px;
+    height: 300px;
+  }
+  .banner-parent{
+    width: 650px;
+    height: 300px;
+  }
+}
+
+
+
+@media (max-width: 650px) {
+  .catalog-container {
+    width: 100%;
+  }
+
+  .second-banner{
+    width: 600px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 600px) {
+  .catalog-container {
+    width: 100%;
+  }
+
+  .second-banner{
+    width: 550px;
+    height: 250px;
+  }
+
+  .banner-parent{
+    width: 550px;
+    height: 250px;
+  }
+}
+
+@media (max-width: 556px) {
+  .catalog-container {
+    width: 100%;
+  }
+
+  .second-banner{
+    width: 500px;
+    height: 250px;
+  }
+
+  .banner-parent{
+    width: 500px;
+    height: 250px;
+  }
+}
+
+@media (max-width: 430px) {
+  .catalog-container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 410px) {
+  .catalog-container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1120px) {
+  .catalog-container {
+    width: 100%;
+  }
+}
+
+
+@media (max-width: 1212px) {
+  .catalog-container {
+    width: 100% !important;
+  }
+}
+
+
+@media (max-width: 511px) {
+
+  .second-banner{
+    width: 450px;
+    height: 230px;
+  }
+
+  .banner-parent{
+    width: 450px;
+    height: 230px;
+  }
+}
+
+
+@media (max-width: 460px) {
+
+  .second-banner{
+    width: 430px;
+    height: 230px;
+  }
+
+  .banner-parent{
+    width: 430px;
+    height: 230px;
+  }
+
+  .img-container{
+    height: 200px;
+  }
+  .clothes, .shoes, .technieque ,.groceries{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); 
+    gap: 8px;
+    padding: 10px;
+    justify-items: center; 
+   grid-template-rows: repeat(1);
+  }
+}
+
+
+@media (max-width: 430px) {
+
+  .second-banner{
+    width: 400px;
+    height: 200px;
+  }
+
+  .banner-parent{
+    width: 400px;
+    height: 200px;
+  }
+  .img-container{
+    height: 200px;
+  }
+
+ 
+
+}
+
+
+@media (max-width: 410px) {
+
+  .second-banner{
+    width: 370px;
+    height: 200px;
+  }
+
+  .banner-parent{
+    width: 370px;
+    height: 200px;
+  }
+
+
+  .clothes, .shoes, .technieque ,.groceries{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); 
+    gap: 8px;
+    padding: 10px;
+    justify-items: center; 
+   grid-template-rows: repeat(1);
+  }
+
+  .img-container{
+    height: 200px;
+  }
+}
+
+@media (max-width: 1195px) {
+  .catalog {
+    display: none;
+  }
+
+ .media-menu{
+  display: flex;
+ }
+
+  .profile-info {
+    display: none;
+    padding-bottom: 10px;
+  }
+}
+
