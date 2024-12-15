@@ -56,7 +56,7 @@ export function createProductCard(item) {
         const quantity = parseInt(quantityInput.textContent, 10); 
         const price = item.price;
         const totalPrice = price * quantity;
-        currentPrice.textContent = `${totalPrice} $`;
+        currentPrice.textContent = `${totalPrice} `;
     }
 
     img.setAttribute('src', item.thumbnail);
@@ -64,11 +64,12 @@ export function createProductCard(item) {
     img3.setAttribute('src', item.thumbnail);
     img4.setAttribute('src', item.thumbnail);
     img5.setAttribute('src', item.thumbnail);
-
+    const newPrice = Math.round(item.price * (1 - item.discountPercentage / 100));
+    const shortNewPrice = newPrice.length > 6 ? newPrice.slice(0, 6) + '...' : newPrice;
     mainImg.src = item.thumbnail;
     productName.innerHTML = item.title;
-    currentPrice.innerHTML = `${item.price} $`;
-    oldPrice.innerHTML = `${item.oldPrice} $`;
+    currentPrice.innerHTML = `${shortNewPrice} $`;
+    oldPrice.innerHTML = `${item.price} $`;
     productDescription.innerHTML = `Бренд товара - ${item.brand || 'неизвестно'}`;
     information.innerHTML = item.description;
 
@@ -113,14 +114,28 @@ export function createSimilar(item) {
     price.className = "price";
     cartIcon.className = "cart-icon";
 
-    title.innerText = item.description.length > 20 ? item.title.slice(0, 20) + '...' : item.title;
+    title.innerText = item.description.length > 18 ? item.title.slice(0, 18) + '...' : item.title;
+    const newPrice = Math.round(item.price * (1 - item.discountPercentage / 100));
+    const shortNewPrice = newPrice.length > 6 ? newPrice.slice(0, 6) + '...' : newPrice ;
 
-    const newPrice = (item.price * (1 - item.discountPercentage / 100)).toFixed(2);
-    const shortNewPrice = newPrice.length > 6 ? newPrice.slice(0, 6) + '...' : newPrice + '$';
-    oldPrice.innerText = shortNewPrice;
 
     price.innerText = shortNewPrice + "$";
-    cartIcon.innerHTML = "&#128722;";
+    cartIcon.innerHTML = `<svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0.5" y="0.5" width="26" height="26" rx="13" stroke="#ACACAC" fill="none"/>
+        <g clip-path="url(#clip0_1_37)">
+          <path d="M10.8752 19.9167C11.1743 19.9167 11.4168 19.6742 11.4168 19.375C11.4168 19.0759 11.1743 18.8334 10.8752 18.8334C10.576 18.8334 10.3335 19.0759 10.3335 19.375C10.3335 19.6742 10.576 19.9167 10.8752 19.9167Z" 
+                stroke="black" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M16.8332 19.9167C17.1323 19.9167 17.3748 19.6742 17.3748 19.375C17.3748 19.0759 17.1323 18.8334 16.8332 18.8334C16.534 18.8334 16.2915 19.0759 16.2915 19.375C16.2915 19.6742 16.534 19.9167 16.8332 19.9167Z" 
+                stroke="black" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M6.5415 8.54163H8.70817L10.1598 15.7945C10.2094 16.0439 10.345 16.2679 10.5431 16.4274C10.7411 16.5868 10.989 16.6715 11.2432 16.6666H16.5082C16.7624 16.6715 17.0102 16.5868 17.2083 16.4274C17.4063 16.2679 17.542 16.0439 17.5915 15.7945L18.4582 11.25H9.24984" 
+                stroke="black" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+        <defs>
+          <clipPath id="clip0_1_37">
+            <rect width="13" height="13" fill="white" transform="translate(6 8)"/>
+          </clipPath>
+        </defs>
+      </svg>`;
 
     img.setAttribute("src", item.images[0]);
     img.setAttribute("alt", "Продукт");
@@ -169,18 +184,33 @@ export function createSimilar(item) {
 
         searchContainer.style.display = searchQuery ? 'block' : 'none';
     });
+    
+    toLove.style.marginBottom = '5px'
 
+    oldPrice.innerHTML = `${item.price}$`
     backetAndSave.style.display = 'flex';
     backetAndSave.style.justifyContent = 'center';
     backetAndSave.style.alignItems = 'center';
     backetAndSave.style.gap = '10px';
 
+    const saleProcent = document.createElement('p')
+    saleProcent.className = 'sale-procent';
+    saleProcent.innerHTML = `акция:${item.discountPercentage}%`;
     imgContainer.appendChild(img);
+    imgContainer.appendChild(saleProcent);
     backetAndSave.append(toLove, cartIcon);
-
+    
     priceAndCart.append(price, backetAndSave);
-    priceContainer.append(title, oldPrice, priceAndCart);
+    const ctgOldParent = document.createElement('div')
+    const categoryP = document.createElement('p')
+    categoryP.className = 'category-p'
+    categoryP.innerHTML = item.category;
+    ctgOldParent.className = 'old-ctg'
+    ctgOldParent.append(oldPrice , categoryP)
+    priceAndCart.append(price, backetAndSave);
+    priceContainer.append(title, ctgOldParent ,  priceAndCart);
     card.append(imgContainer, priceContainer);
+      
 
     if (item.category === "beauty") {
         beauty.appendChild(card);

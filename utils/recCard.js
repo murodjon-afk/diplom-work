@@ -1,17 +1,9 @@
-export function createCard(item) {
-    const clothes = document.querySelector(".clothes");
-    const tech = document.querySelector(".technieque");
-    const shoe = document.querySelector(".shoes");
+export function reclameCard(item) {
     const searchContainer = document.querySelector('.search-container');
     const input = document.querySelector("input");  
     const groceries = document.querySelector('.groceries');
-    
-    const categoryTexts = {
-        beauty: document.querySelector('.clothes-text'),
-        fragrances: document.querySelector('.shoes-text'),
-        furniture: document.querySelector('.technieque-text'),
-        groceries: document.querySelector('.groceries-text'),
-    };
+
+    const maxPrice = document.getElementById("max-price");
     const secondBanner = document.querySelector('.second-banner')
 
     const card = document.createElement("div");
@@ -25,6 +17,16 @@ export function createCard(item) {
     const cartIcon = document.createElement("span");
     const toLove = document.createElement('span');
     const backetAndSave = document.createElement('div');
+   const ctgBeauty = document.querySelector('.ctg-beauty')
+   const ctgFurniture = document.querySelector('.ctg-furniture')
+   const ctgFragrances = document.querySelector('.ctg-fragrances')
+   const ctgGroceries = document.querySelector('.ctg-groceries')
+  const categoryP = document.createElement('p')
+   categoryP.className = 'category-p'
+   categoryP.innerHTML = item.category;
+  
+
+
 
 
     toLove.innerHTML = "&#10084;";
@@ -127,45 +129,73 @@ export function createCard(item) {
             }
         });
 
-        searchContainer.style.display = searchQuery ? 'block' : 'none';
+        searchContainer.style.display = searchQuery ? 'none' : 'none';
     });
 
     backetAndSave.style.display = 'flex';
     backetAndSave.style.justifyContent = 'center';
     backetAndSave.style.alignItems = 'center';
     backetAndSave.style.gap = '10px';
-
+    const ctgOldParent = document.createElement('div')
+    ctgOldParent.className = 'old-ctg'
     toLove.style.marginBottom = '5px'
-
     const saleProcent = document.createElement('p')
     saleProcent.className = 'sale-procent';
     saleProcent.innerHTML = `акция:${item.discountPercentage}%`;
     imgContainer.appendChild(img);
     imgContainer.appendChild(saleProcent);
+     ctgOldParent.append(oldPrice , categoryP)
+   
     backetAndSave.append(toLove, cartIcon);
-    const ctgOldParent = document.createElement('div')
-    const categoryP = document.createElement('p')
-    categoryP.className = 'category-p'
-    categoryP.innerHTML = item.category;
-    ctgOldParent.className = 'old-ctg'
-    ctgOldParent.append(oldPrice , categoryP)
+
     priceAndCart.append(price, backetAndSave);
     priceContainer.append(title, ctgOldParent ,  priceAndCart);
     card.append(imgContainer, priceContainer);
+    if (item.discountPercentage >= 5) {
+     card.style.display = 'block'
+    } else{
+         card.style.display = 'none'
+    }
 
-    const categoryContainers = {
-        beauty: clothes,
-        fragrances: shoe,
-        furniture: tech,
-        groceries: groceries,
+
+
+    const rangeSlider = document.getElementById("price-range");
+    
+    const filterCards = () => {
+        const currentMax = parseFloat(maxPrice.value) || 0; 
+   
+    
+        const cards = document.querySelectorAll('.card');
+    
+        cards.forEach(card => {
+            const cardPrice = parseFloat(card.querySelector('.price').innerText.replace('$', '')) || 0;
+    
+            if (currentMax === 0 || cardPrice <= currentMax) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
     };
+    
 
-    if (categoryContainers[item.category]) {
-        categoryContainers[item.category].appendChild(card);
-        if (categoryTexts[item.category]) {
-            categoryTexts[item.category].innerHTML = item.category;
-        }
-    } 
+    rangeSlider.addEventListener("input", () => {
+        const currentValue = parseInt(rangeSlider.value);
+        maxPrice.value = currentValue;
+        filterCards();
+    });
+    
+    maxPrice.addEventListener("input", () => {
+        const currentValue = parseInt(maxPrice.value);
+        rangeSlider.value = currentValue;
+        filterCards(); 
+    });
+    
+   
+    filterCards();
+    
+      
+    groceries.append(card)
 
     return card;
 }

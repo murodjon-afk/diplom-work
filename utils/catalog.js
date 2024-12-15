@@ -1,6 +1,6 @@
 export function openCatalog() {
     const catalog = document.querySelector('.catalog');
-    const techCategory = document.querySelectorAll('.tech-category');
+    const techCategory = document.querySelector('.tech-category');
     const Cansel = document.querySelectorAll('.cansel-category');
     const clothesCategory = document.querySelector('.clothes-category')
     const shoeCategory = document.querySelector('.shoe-category')
@@ -9,7 +9,7 @@ export function openCatalog() {
     const count2 = document.querySelector('.count-2');
     const count3 = document.querySelector('.count-3');
     const count4 = document.querySelector('.count-4')
-    const techCtg = document.querySelector('.technieque2');
+    const techCtg = document.querySelector('.tech-ctg');
     const clothesCtg = document.querySelector('.clothes-ctg');
     const groceriesCtg =document.querySelector('.groceries-ctg')
     const shoeCtg = document.querySelector('.shoes-ctg');

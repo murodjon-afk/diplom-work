@@ -49,11 +49,58 @@
           </button>
           <button class="toProfile"><svg height="35" viewBox="0 0 12 12" width="35" xmlns="http://www.w3.org/2000/svg"><path d="m8.5 6c.82843 0 1.5.67157 1.5 1.5 0 1.11608-.45897 2.01027-1.21215 2.6148-.74127.595-1.73477.8852-2.78785.8852s-2.04658-.2902-2.78785-.8852c-.75318-.60453-1.21215-1.49872-1.21215-2.6148 0-.77966118.59487668-1.42044457 1.3555213-1.49313306l.1444587-.00686694zm-2.5-5c1.10457 0 2 .89543 2 2s-.89543 2-2 2-2-.89543-2-2 .89543-2 2-2z" fill="#7000ff"/></svg>Войти</button>
           
-
+         <div class="overlay"></div>
      
       </div>
 
-     
+     <div class="nav">
+      <nav class="navbar">
+        <ul class="navbar-list">
+         <div class="location">
+            <li class="navbar-item">
+                <select class="region-selector">
+                  <option value="tashkent">
+                    <span class="icon">📍</span> Ташкент
+                  </option>
+                  <option value="bukhara">
+                    <span class="icon">📍</span> Бухара
+                  </option>
+                  <option value="samarkand">
+                    <span class="icon">📍</span> Самарканд
+                  </option>
+           
+                </select>
+              </li>
+              
+            <li class="navbar-item">Пункты выдачи</li>
+         </div>
+
+           <div class="uzru">
+            <li class="navbar-item">Вопрос-ответ</li>
+          <li class="navbar-item">Мои заказы</li>
+          <li class="navbar-item">
+    
+            <select class="language-selector">
+              <option value="ru">
+                <span class="icon">
+                  <svg width="24" height="16" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg">
+                    <g fill-rule="evenodd">
+                      <rect y="5" width="24" height="5" fill="#005BBB"/> 
+                      <rect y="10" width="24" height="5" fill="#D52B1E"/> 
+                      <rect width="24" height="5" fill="#ffff"/> 
+                    </g>
+                  </svg>
+                </span>
+                Русский
+              </option>
+              <option value="uz">Uzbek</option>
+            </select>
+          </li>
+           </div>
+          
+        </ul>
+      </nav>
+     </div>
      <header>
       <div class="logo-container">
         <img src="./logos/Vector (3).png" alt="" class="log">
@@ -71,29 +118,40 @@
         <div class="catalog-container">
           <p class="category-text">Категория Товаров</p>
           <div class="categorys">
-            <button class="cansel-category">Отменить все Свойсвта  <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="28" height="28" viewBox="0 0 48 48">
-              <path fill="#f44336" d="M44,24c0,11.045-8.955,20-20,20S4,35.045,4,24S12.955,4,24,4S44,12.955,44,24z"></path><path fill="#fff" d="M29.656,15.516l2.828,2.828l-14.14,14.14l-2.828-2.828L29.656,15.516z"></path><path fill="#fff" d="M32.484,29.656l-2.828,2.828l-14.14-14.14l2.828-2.828L32.484,29.656z"></path>
-              </svg></button>
-           <div class="category">
-            <button class="tech-category">Мебель</button>
-            <div class="tech-count"><span class="count-1">0</span>Товаров</div>
-           </div>
-           <div class="category">
-            <button class="clothes-category">Бьюти товары</button>
-            <div class="clothes-count"><span class="count-2">0</span>Товаров</div>
-           </div>
-           <div class="category">
-            <button class="shoe-category">Парфюмерия</button>
-            <div class="shoe-count"><span class="count-3">0</span>Товаров</div>
-           </div>
-
-           <div class="category">
-            <button class="groceries-category">Питание</button>
-            <div class="groceries-count"><span class="count-4">0</span>Товаров</div>
-           </div>
-          
+              <button class="cansel-category">Отменить все Свойсвта  
+                  <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="28" height="28" viewBox="0 0 48 48">
+                      <path fill="#f44336" d="M44,24c0,11.045-8.955,20-20,20S4,35.045,4,24S12.955,4,24,4S44,12.955,44,24z"></path>
+                      <path fill="#fff" d="M29.656,15.516l2.828,2.828l-14.14,14.14l-2.828-2.828L29.656,15.516z"></path>
+                      <path fill="#fff" d="M32.484,29.656l-2.828,2.828l-14.14-14.14l2.828-2.828L32.484,29.656z"></path>
+                  </svg>
+              </button>
+              <div class="category">
+                <button class="tech-category">Мебель</button>
+                <span class="emoji-catlog">🪑</span>
+                <div class="tech-count"><span class="count-1">0</span> Товаров</div>
+                
+            </div>
+              <div class="category">
+                  <button class="clothes-category">Бьюти товары</button>
+                  <span class="emoji-catlog">💄</span>
+                  <div class="clothes-count"><span class="count-2">0</span> Товаров</div>
+                 
+              </div>
+              <div class="category">
+                  <button class="shoe-category">Парфюмерия</button>
+                  <span class="emoji-catlog">🧴</span>
+                  <div class="shoe-count"><span class="count-3">0</span> Товаров</div>
+                 
+              </div>
+              <div class="category">
+                  <button class="groceries-category">Питание</button>
+                  <span class="emoji-catlog">🍎</span>
+                  <div class="groceries-count"><span class="count-4">0</span> Товаров</div>
+                 
+              </div>
           </div>
-        </div>
+      </div>
+      
     </div>
 
    
@@ -161,7 +219,7 @@
       <div class="clothes-ctg"><h1 class="clothes-text">Бьюти Товары</h1> <div class="clothes"></div></div>
       <div class="second-banner"></div>
       <div class="shoes-ctg"> <h1 class="shoes-text">Парфюмерия</h1> <div class="shoes"></div></div>
-      <div class="technieque2"> <h1 class="technieque-text">Мебель</h1> <div class="technieque"></div></div>
+      <div class="tech-ctg"> <h1 class="technieque-text">Мебель</h1> <div class="technieque"></div></div>
       <div class="groceries-ctg"><h1 class="groceries-text">Питание</h1> <div class="groceries"></div></div>
   
 
@@ -170,38 +228,36 @@
 
 
 
-     <footer>
-      <div class="footer-section">
-        <div class="footer-column">
-          <h4>О нас</h4>
-          <a href="#">Пункты выдачи</a>
-          <a href="#">Вакансии</a>
-        </div>
-        <div class="footer-column">
-          <h4>Пользователям</h4>
-          <a href="#">Связаться с нами</a>
-          <a href="#">Вопрос - Ответ</a>
-        </div>
+      <footer>
+  
       
-      </div>
-      <div class="footer-bottom">
-        <div class="footer-apps">
-          <h4>Скачать в</h4>
-          <a href="https://www.apple.com/app-store/"><img src="./logos/Apple_logo_black.svg.png" alt="AppStore"></a>
-          <a href="https://play.google.com/store/games?hl=en&pli=1"><img src="./logos/google-play-logo_578229-280.avif" alt="Google Play"></a>
-        </div>
+     
+     
         <div class="footer-socials">
-          <h4>Uzum в соцсетях</h4>
-          <a href="https://www.instagram.com/uzum.market/"><img src="./logos/instagram-icon_1057-2227.avif" alt="Instagram"></a>
-          <a href="https://telegram.org/"><img src="./logos/telegram.logo" alt="Telegram"></a>
-          <a href="https://www.youtube.com/"><img src="./logos/youtube-1837872_1280.webp" alt="YouTube"></a>
+
+          <div class="apps">
+            <div class="footer-apps">
+              <h4>Приложение :</h4>
+              <a href="https://www.apple.com/app-store/"><img src="../logos/Apple_logo_black.svg.png" alt="AppStore"></a>
+              <a href="https://play.google.com/store/games?hl=en&pli=1"><img src="../logos/google-play-logo_578229-280.avif" alt="Google Play"></a>
+          </div>
         </div>
-      </div>
-      <div class="footer-legal">
-        <a href="#">Соглашение о конфиденциальности</a>
-        <a href="#">Пользовательское соглашение</a>
-        <p class="footer-text">©2024 ООО «UZUM MARKET». ИНН 309376127. Клон «UZUM MARKET» для практики в профессии</p>
-      </div>
+          <div class="social">
+            <h4>Uzum в соцсетях :</h4>
+          <a href="https://www.instagram.com/uzum.market/"><img src="../logos/instagram-icon_1057-2227.avif" alt="Instagram"></a>
+          <a href="https://telegram.org/"><img src="../logos/telegram.logo" alt="Telegram"></a>
+          <a href="https://www.youtube.com/"><img src="../logos/youtube-1837872_1280.webp" alt="YouTube"></a>
+          </div>
+
+          <div class="footer-legal">
+            <p class="footer-text">©2024 ООО «UZUM MARKET». ИНН 309376127. Клон «UZUM MARKET» для практики в профессии</p>
+          </div>
+
+        </div>
+    
+
+   
+  
 
 
 

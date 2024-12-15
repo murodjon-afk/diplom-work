@@ -161,9 +161,42 @@ padding-bottom: 20px;
     
   }
 
+  .sale-procent{
+    position: relative;
+    top: -10%;
+    right: -3%;
+    background-color: yellow;
+    border-radius: 4px;
+    font-size: 13px;
+    width: 80px;
+    z-index: 1000;
 
+  }
   
+  .old-ctg{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
 
+  .ctg{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+    padding-left: 30px;
+  }
+  .filter-price{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .category-p{
+    background-color: yellow;
+    border-radius: 2px;
+    font-size: 13px;
+  }
   
   .footer-apps img, .footer-socials img {
     width: 24px;

@@ -16,3 +16,19 @@ export function goHome() {
 
     }
 }
+
+
+
+export function goHome2() {
+    const logoParent = document.querySelector('.logo-container');
+    const catalog = document.querySelector('.catalog');
+    logoParent.style.cursor = 'pointer';
+    logoParent.onclick = () => {
+        window.location.href = '/index.html'; 
+    };
+    catalog.onclick = () => {
+        window.location.href = '/index.html'; 
+        alert('К сожеление каталог действует только глобальном странице !');
+    };
+
+}

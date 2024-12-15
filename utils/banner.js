@@ -20,7 +20,7 @@ export function showBanner() {
 
     function updateBackground(nextIndex, direction = 'right') {
         if (isAnimating) return;
-        isAnimating = true;
+
         const currentImage = document.createElement('div');
         currentImage.style.backgroundImage = `url('${logos[currentIndex]}')`;
         currentImage.classList.add('banner-images');

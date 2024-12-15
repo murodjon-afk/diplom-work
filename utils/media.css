@@ -147,11 +147,15 @@
  
 
   .banner-parent {
-    width: 80%;
-    height: 400px;
+    width: 95%;
+    height: 500px;
     margin-top: 40px;
-    border-radius: 12px;
+    border-radius: 15px;
     background-size: 100% 100%;
+  }
+  .second-banner{
+    width: 95%;
+    height: 450px;
   }
 
   .catalog {
@@ -736,5 +740,13 @@
     display: none;
     padding-bottom: 10px;
   }
+}
+
+
+@media (max-width: 440px) {
+  input[type="search"] {
+    width: 160px;
+  }
+
 }
 

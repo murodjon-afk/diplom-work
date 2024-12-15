@@ -1798,23 +1798,6 @@
     }
   ],
   "users": [
-    {
-      "id": "23f1",
-      "nickName": "Murod",
-      "phone": "+998 88 460-65-75",
-      "birthDate": "1939-07-01"
-    },
-    {
-      "id": "fe06",
-      "nickName": "Murka",
-      "phone": "+998 97 406-65-75",
-      "birthDate": "1941-01-08"
-    },
-    {
-      "id": "0f0d",
-      "nickName": "Murodjon",
-      "phone": "+998 88 460-65-75",
-      "birthDate": "2010-10-08"
-    }
+   
   ]
 }
