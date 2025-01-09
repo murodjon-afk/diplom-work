@@ -1317,8 +1317,9 @@ let storedLength = localStorage.getItem('basketLength');
 basketCount.innerHTML = storedLength || 0;
 basketCount2.innerHTML = `Итого товаров: ${storedLength}`;
 basketCount3.innerHTML = storedLength || 0;
-
 card.setAttribute('id', item.id);
+
+
     return card;
 }
 

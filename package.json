@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-  "dev": "webpack-dev-server --open --mode development",
-  "start": "json-server -p 3001 -w db.json",
-  "prod": "concurrently \"npm run dev\" \"npm run start\"",
-  "build": "webpack --mode production"
-},
+    "dev": "webpack-dev-server --open --mode development",
+    "start": "json-server -p 3001 -w db.json",
+    "prod": "concurrently \"npm run dev\" \"npm run start\"",
+    "build": "webpack --mode production"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -16,6 +16,6 @@
     "json-server": "^1.0.0-beta.3"
   },
   "devDependencies": {
-    "concurrently": "^9.1.0"
+    "concurrently": "^9.1.2"
   }
 }

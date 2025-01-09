@@ -1,168 +1,7 @@
-export function createProductCard(item) {
-    const mainImg = document.querySelector('.main-image');
-    const quantityInput = document.querySelector('.quantity-input');
-    const btnMinus = document.querySelector('.minus');
-    const btnPlus = document.querySelector('.plus');
-    const productThumnail = document.querySelector('.product-thumbnails');
-    const productName = document.querySelector('.product-name');
-    const currentPrice = document.querySelector('.current-price');
-    const oldPrice = document.querySelector('.old-price');
-    const productDescription = document.querySelector('.product-description');
-    const information = document.querySelector('.information');
-    const simBeautyParent = document.querySelector('.sim-beauty-parent');
-    const simFragrancesParent = document.querySelector('.sim-fragrances-parent');
-    const simGroceriesParent = document.querySelector('.sim-groceries-parent');
-    const simFurnitureParent = document.querySelector('.sim-furniture-parent');
-    const profieleNick = document.querySelector('.profile-nick')
-    const signin = document.querySelector('.signin')
-    const addtocart =document.querySelector('.add-to-cart')
-    const storedName = localStorage.getItem('userName');
-    const storedPhone = localStorage.getItem('userPhone'); 
-    const moreinfo =document.querySelector('.more-info')
-    const lovely = document.querySelector('.lovely')
-
-
-    if (storedName) {
-      profieleNick.textContent = ` ${storedName}`;
-    } else {
-      profieleNick.textContent = 'Войти';
-    }
-    
- 
-    signin.onclick = () => {
-      if (profieleNick.innerHTML === 'Войти') {
-        alert('К сожалению, регистрация на сайте происходит на главной странице.');
-        window.location.href = './index.html'; 
-      } else {
-        alert(`Привет ${storedName}, ваши данные: ${storedName}, ${storedPhone}`);
-      }
-    };
-    
-
-    const img = document.createElement('img');
-    const img2 = document.createElement('img');
-    const img3 = document.createElement('img');
-    const img4 = document.createElement('img');
-    const img5 = document.createElement('img');
-
-
-    simBeautyParent.style.display = 'none';
-    simFragrancesParent.style.display = 'none';
-    simFurnitureParent.style.display = 'none';
-    simGroceriesParent.style.display = 'none';
-
-    if (item.category === 'beauty') {
-        simBeautyParent.style.display = 'block';
-    } else if (item.category === 'fragrances') {
-        simFragrancesParent.style.display = 'block';
-    } else if (item.category === 'furniture') {
-        simFurnitureParent.style.display = 'block';
-    } else if (item.category === 'groceries') {
-        simGroceriesParent.style.display = 'block';
-    }
-
-    btnPlus.onclick = () => {
-        quantityInput.value++;
-        quantityInput.max=item.stock;
-        if (quantityInput.value > item.stock) {
-            quantityInput.value = item.stock;
-        }
-        updatePrice();
-    };
-
-    btnMinus.onclick = () => {
-        quantityInput.value--;
-        if (quantityInput.value < 1) {
-            quantityInput.value = 1;
-        }
-        updatePrice();
-    };
-
-    function updatePrice() {
-        const quantity = parseInt(quantityInput.value, 10); 
-        const price = shortNewPrice;
-        const totalPrice = price * quantity;
-        currentPrice.textContent = `${totalPrice} $ `;
-        
-    }
-    img.onclick=()=>{
-        mainImg.src = item.images[0] || item.thumbnail;
-    }
-    img2.onclick=()=>{
-        mainImg.src = item.images[1] || item.thumbnail;
-    }
-    img3.onclick=()=>{
-        mainImg.src = item.images[2] || item.thumbnail;
-    }
-    img4.onclick=()=>{
-        mainImg.src = item.images[0] || item.thumbnail;
-    }
-    img5.onclick=()=>{
-        mainImg.src = item.images[2] || item.thumbnail;
-    }
-    img.setAttribute('src', item.images[0] || item.thumbnail) ;
-    img2.setAttribute('src', item.images[1]|| item.thumbnail);
-    img3.setAttribute('src', item.images[2]|| item.thumbnail);
-    img4.setAttribute('src', item.images[0]|| item.thumbnail);
-    img5.setAttribute('src', item.images[2]|| item.thumbnail);
-    const newPrice = Math.round(item.price * (1 - item.discountPercentage / 100));
-    const shortNewPrice = newPrice.length > 6 ? newPrice.slice(0, 6) + '...' : newPrice;
-    mainImg.src = item.thumbnail;
-    productName.innerHTML = item.title;
-    currentPrice.innerHTML = `${shortNewPrice} $`;
-    oldPrice.innerHTML = `${item.price} $`;
-    productDescription.innerHTML = `Бренд товара - ${item.brand || 'неизвестно'}`;
-    information.innerHTML = item.description;
-
-
-const cards = document.querySelectorAll(".card");
-const cardsArray = [...cards]; 
-cardsArray.forEach(card => {
-    card.addEventListener('click', () => {
-        lovely.append(card); 
-    });
-});
-
- 
- 
-    img.className = 'thubnail';
-    productThumnail.append(img, img2, img3, img4, img5);
-    addtocart.onclick=()=>{
-        addtocart.style.backgroundColor = 'white';
-        addtocart.style.color='purple';
-        addtocart.style.border = '2px solid purple'; 
-        addtocart.innerHTML='В Корзине';
-        const quantityValue=quantityInput.value;
-        if (addtocart.innerHTML==='В Корзине') {
-            const currentBasket = JSON.parse(localStorage.getItem('basketItems')) || [];
-            let price =shortNewPrice;
-
-            
-           const basketp =shortNewPrice * quantityValue;
-           
-            
-            const basketData = {
-                id: item.id,
-                title: item.title || 'Без названия',
-                price: basketp,
-                oldPrice:item.price,
-                image: item.thumbnail || 'default.jpg',
-                stock: item.stock,
-                quantity:1 
-            };
-            currentBasket.push(basketData);
-            localStorage.setItem('basketItems', JSON.stringify(currentBasket));
-        }
-    }
-
-    return productThumnail;
-}
-
-
 
 export function createSimilar(item) {
     const nothingBasket =document.querySelector('.nothing-basket')
-
+   
     const basketBtn = document.querySelector('.basket');
     const simParent = document.querySelector('.sim-parent')
     const productPage = document.querySelector('.product-page')
@@ -170,7 +9,6 @@ export function createSimilar(item) {
     const beauty = document.querySelector(".similar-beauty");
     const fragrances = document.querySelector(".similar-fragrances");
     const furniture = document.querySelector(".similar-furniture");;
-    const searchContainer = document.querySelector('.search-container');
     const input = document.querySelector("input");
     const card = document.createElement("div");
     const imgContainer = document.createElement("div");
@@ -195,7 +33,11 @@ const basketCount2 =document.querySelector('.basket-count2');
 const btnPay = document.querySelector('.btn-pay');
 const basketParent2 = document.querySelector('.basket-parent2');
 const toPage = document.querySelector('.toPage ')
-const toPage2 = document.querySelector('.toPage2 ')
+const toPage2 = document.querySelector('.toPage2 ');
+const globalBtn = document.querySelector('.global-page');
+globalBtn.onclick=()=>{
+    window.location.href='/index.html'
+}
 toPage2.onclick=()=>{
     window.location.href=`http://127.0.0.1:5500/utils/product.html?id=${productId}`
 }
@@ -244,14 +86,25 @@ const productId = url.searchParams.get('id')
     toLove.style.color = 'grey'
     img.setAttribute("src", item.images[0]);
     img.setAttribute("alt", "Продукт");
-    toLove.onclick = () => { 
-        if (  toLove.style.color ==='purple') {
-            if (lovely.children.length===0) {
-                lovelytext.innerHTML='';
-                nothingheart.style.display='block'
-            }
+    function updateLovelyDisplay() {
+        if (lovely.children.length === 0) {
+            nothingheart.style.display = 'block';
+            lovely.style.display = 'none';
+            lovelytext.innerHTML = ''; 
+        } else {
+            nothingheart.style.display = 'none';
+            lovely.style.display = 'grid';
+            lovelytext.innerHTML = 'Избранное'; 
         }
-        
+    }
+    
+    const loveKey = `toLoveColor-${item.id}`;
+    toLove.style.color = localStorage.getItem(loveKey) === "purple" ? "purple" : "grey";
+    toLove.onclick = () => { 
+        if (toLove.style.color === 'purple') {
+            updateLovelyDisplay();
+        }
+    
         const loveKey = `toLoveColor-${item.id}`;
         const newColor = toLove.style.color === "purple" ? "grey" : "purple";
         toLove.style.color = newColor;
@@ -259,6 +112,7 @@ const productId = url.searchParams.get('id')
     
         let savedItems = JSON.parse(localStorage.getItem('savedItems')) || [];
         const existingCard = lovely.querySelector(`[id="${item.id}"]`);
+        const existingCard2 = savedItems.find(savedItem => savedItem.id === item.id);
     
         if (newColor === "purple") {
             if (!existingCard) {
@@ -268,17 +122,34 @@ const productId = url.searchParams.get('id')
     
                 savedItems.push(item);
                 localStorage.setItem('savedItems', JSON.stringify(savedItems));
+                if (!existingCard2) {
+                    const newCard = createSimilar(item); 
+                    newCard.setAttribute("id", item.id);
+                    lovely.appendChild(newCard);
+        
+                    savedItems.push(item);
+                    localStorage.setItem('savedItems', JSON.stringify(savedItems));
+                }
             }
         } else {
             if (existingCard) {
                 existingCard.remove();
                 savedItems = savedItems.filter(savedItem => savedItem.id !== item.id);
                 localStorage.setItem('savedItems', JSON.stringify(savedItems));
+                if (existingCard2) {
+                    existingCard.remove();
+                    savedItems = savedItems.filter(savedItem => savedItem.id !== item.id);
+                    localStorage.setItem('savedItems', JSON.stringify(savedItems));
+                }
             }
         }
+    
+     
+        updateLovelyDisplay();
     };
- tofovorite.onclick = () => {
-
+    
+    tofovorite.onclick = () => {
+        updateLovelyDisplay();
         lovelytext.innerHTML = 'Избранное';
     
         let savedItems = JSON.parse(localStorage.getItem('savedItems')) || [];
@@ -300,8 +171,8 @@ const productId = url.searchParams.get('id')
         if (tofovorite.innerHTML === 'Избранное') { 
             productPage.style.display = 'none';
             simParent.style.display = 'none';
-            basketParent2.style.display='none';
-            basketBtn.innerHTML='Корзина';
+            basketParent2.style.display = 'none';
+            basketBtn.innerHTML = 'Корзина';
     
             document.title = 'Избранное';
             tofovorite.innerHTML = 'Главная';
@@ -310,15 +181,10 @@ const productId = url.searchParams.get('id')
             toFovoriteParent.style.justifyContent = 'center';
             toFovoriteParent.style.alignItems = 'center';
         } else {
-            productPage.style.display = 'flex';
-            simParent.style.display = 'block';
-    
-            document.title = 'Uzum Market Clone';
-            tofovorite.innerHTML = 'Избранное';
-    
-            toFovoriteParent.style.display = 'none';
+          window.location.href = `http://127.0.0.1:5500/utils/product.html?id=${productId}`
         }
     };
+    
     
   
     const redirectToProduct = () => {
@@ -379,7 +245,7 @@ basketBtn.onclick = () => {
             return sum + (price * quantity); 
         }, 0);
         
-        basketPrice.innerHTML = `${totalPrice}$`;
+        basketPrice.innerHTML = `Итоги: ${totalPrice}$`;
     
         let oldPrice = basketItems.reduce((sum, item) => {
             let price = parseFloat(item.oldPrice) || 0; 
@@ -518,21 +384,19 @@ basket.forEach(item => {
         }
     });
   
-    
     removeBtn.onclick = () => {
-        let basketItems = JSON.parse(localStorage.getItem("basketItems")) || [];
+        let basketItems = JSON.parse(localStorage.getItem('basketItems')) || [];
         if (basketItems.length > 0) {
             let totalPrice = basketItems.reduce((sum, item) => sum + (+item.price * +item.quantity), 0);
-            basketPrice.innerHTML = `${totalPrice}$`;
+            basketPrice.innerHTML = `Итого: ${totalPrice}$`;
             let oldPrice = basketItems.reduce((sum, item) => sum + (+item.oldPrice * +item.quantity), 0);
             let totalOld = (oldPrice - totalPrice).toFixed(2);
             basketSale.innerHTML = `Итоги Скидок: ${totalOld}$`;
         }
         if (basketCard) {
             const cardId = basketCard.getAttribute('id');
-            console.log(cardId);
             basketItems = basketItems.filter(item => item.id !== cardId);
-            localStorage.setItem("basketItems", JSON.stringify(basketItems));
+            localStorage.setItem('basketItems', JSON.stringify(basketItems));
             basketCard.remove();
             let length = basketItems.length;
             localStorage.setItem('basketLength', length);
@@ -546,13 +410,7 @@ basket.forEach(item => {
             nothingBasket.style.display = 'none';
             basket2.style.display = 'block';
         }
-        let newTotalPrice = basketItems.reduce((sum, item) => sum + (+item.price * +item.quantity), 0);
-        basketPrice.innerHTML = `${newTotalPrice}$`;
-        let newOldPrice = basketItems.reduce((sum, item) => sum + (+item.oldPrice * +item.quantity), 0);
-        let newTotalOld = (newOldPrice - newTotalPrice).toFixed(2);
-        basketSale.innerHTML = `Итоги Скидок: ${newTotalOld}$`;
     };
-    
     
     quantityControl.append(decreaseBtn, quantityValue, increaseBtn);
     basketImgContainer.append(basketImg);
@@ -563,6 +421,7 @@ basket.forEach(item => {
 
 
 };
+
 
 
 
@@ -608,10 +467,182 @@ cartIcon.onclick = () => {
 let storedLength = localStorage.getItem('basketLength');
 basketCount.innerHTML = storedLength || 0;
 basketCount2.innerHTML = `Итого товаров: ${storedLength}`;
-    
-        
+card.setAttribute('id', item.id);
 
-  
 
     return card;
+}
+export function createProductCard(item) {
+    const mainImg = document.querySelector('.main-image');
+    const quantityInput = document.querySelector('.quantity-input');
+    const btnMinus = document.querySelector('.minus');
+    const btnPlus = document.querySelector('.plus');
+    const productThumnail = document.querySelector('.product-thumbnails');
+    const productName = document.querySelector('.product-name');
+    const currentPrice = document.querySelector('.current-price');
+    const oldPrice = document.querySelector('.old-price');
+    const productDescription = document.querySelector('.product-description');
+    const information = document.querySelector('.information');
+    const simBeautyParent = document.querySelector('.sim-beauty-parent');
+    const simFragrancesParent = document.querySelector('.sim-fragrances-parent');
+    const simGroceriesParent = document.querySelector('.sim-groceries-parent');
+    const simFurnitureParent = document.querySelector('.sim-furniture-parent');
+    const profieleNick = document.querySelector('.profile-nick')
+    const signin = document.querySelector('.signin')
+    const addtocart =document.querySelector('.add-to-cart')
+    const storedName = localStorage.getItem('userName');
+    const storedPhone = localStorage.getItem('userPhone'); 
+    const basketCount =document.querySelector('.basket-count');
+    const moreinfo = document.querySelector('.more-info');
+    let savedItems = JSON.parse(localStorage.getItem('savedItems')) || [];
+    
+    moreinfo.onclick = () => {
+        
+      const existingCard = savedItems.find(savedItem => savedItem.id === item.id);
+      if (!existingCard) {
+        savedItems.push(item);
+        localStorage.setItem('savedItems', JSON.stringify(savedItems));
+      }
+    };
+    
+
+    console.log(item);
+
+
+    if (storedName) {
+      profieleNick.textContent = ` ${storedName}`;
+    } else {
+      profieleNick.textContent = 'Войти';
+    }
+    
+ 
+    signin.onclick = () => {
+      if (profieleNick.innerHTML === 'Войти') {
+        alert('К сожалению, регистрация на сайте происходит на главной странице.');
+        window.location.href = './index.html'; 
+      } else {
+        alert(`Привет ${storedName}, ваши данные: ${storedName}, ${storedPhone}`);
+      }
+    };
+    
+
+    const img = document.createElement('img');
+    const img2 = document.createElement('img');
+    const img3 = document.createElement('img');
+    const img4 = document.createElement('img');
+    const img5 = document.createElement('img');
+
+
+    simBeautyParent.style.display = 'none';
+    simFragrancesParent.style.display = 'none';
+    simFurnitureParent.style.display = 'none';
+    simGroceriesParent.style.display = 'none';
+
+    if (item.category === 'beauty') {
+        simBeautyParent.style.display = 'block';
+    } else if (item.category === 'fragrances') {
+        simFragrancesParent.style.display = 'block';
+    } else if (item.category === 'furniture') {
+        simFurnitureParent.style.display = 'block';
+    } else if (item.category === 'groceries') {
+        simGroceriesParent.style.display = 'block';
+    }
+
+    btnPlus.onclick = () => {
+        quantityInput.value++;
+        quantityInput.max=item.stock;
+        if (quantityInput.value > item.stock) {
+            quantityInput.value = item.stock;
+        }    
+        updatePrice();
+    };
+
+    btnMinus.onclick = () => {
+        quantityInput.value--;
+        if (quantityInput.value < 1) {
+            quantityInput.value = 1;
+        }
+        updatePrice();
+    };
+
+    function updatePrice() {
+        const quantity = parseInt(quantityInput.value, 10); 
+        const price = shortNewPrice;
+        const totalPrice = price * quantity;
+        currentPrice.textContent = `${totalPrice} $ `;
+        
+    }
+    img.onclick=()=>{
+        mainImg.src = item.images[0] || item.thumbnail;
+    }
+    img2.onclick=()=>{
+        mainImg.src = item.images[1] || item.thumbnail;
+    }
+    img3.onclick=()=>{
+        mainImg.src = item.images[2] || item.thumbnail;
+    }
+    img4.onclick=()=>{
+        mainImg.src = item.images[0] || item.thumbnail;
+    }
+    img5.onclick=()=>{
+        mainImg.src = item.images[2] || item.thumbnail;
+    }
+    img.setAttribute('src', item.images[0] || item.thumbnail) ;
+    img2.setAttribute('src', item.images[1]|| item.thumbnail);
+    img3.setAttribute('src', item.images[2]|| item.thumbnail);
+    img4.setAttribute('src', item.images[0]|| item.thumbnail);
+    img5.setAttribute('src', item.images[2]|| item.thumbnail);
+    const newPrice = Math.round(item.price * (1 - item.discountPercentage / 100));
+    const shortNewPrice = newPrice.length > 6 ? newPrice.slice(0, 6) + '...' : newPrice;
+    mainImg.src = item.thumbnail;
+    productName.innerHTML = item.title;
+    currentPrice.innerHTML = `${shortNewPrice} $`;
+    oldPrice.innerHTML = `${item.price} $`;
+    productDescription.innerHTML = `Бренд товара - ${item.brand || 'неизвестно'}`;
+    information.innerHTML = item.description;
+
+
+  console.log(item.id);
+  
+
+ 
+   
+    img.className = 'thubnail';
+    productThumnail.append(img, img2, img3, img4, img5);
+    addtocart.onclick = () => {
+        addtocart.style.backgroundColor = 'white';
+        addtocart.style.color = 'purple';
+        addtocart.style.border = '2px solid purple';
+        addtocart.innerHTML = 'В Корзине';
+        const quantityValue = quantityInput.value;
+        const productId = item.id;
+        
+        if (addtocart.innerHTML === 'В Корзине') {
+            const currentBasket = JSON.parse(localStorage.getItem('basketItems')) || [];
+            const basketItemExists = currentBasket.some(item => item.id === productId);
+    
+            if (!basketItemExists) {
+                const basketp = shortNewPrice * quantityValue;
+                const basketData = {
+                    id: productId,
+                    title: item.title || 'Без названия',
+                    price: basketp,
+                    oldPrice: item.price,
+                    image: item.thumbnail || 'default.jpg',
+                    stock: item.stock,
+                    quantity: 1
+                };
+                currentBasket.push(basketData);
+                localStorage.setItem('basketItems', JSON.stringify(currentBasket));
+                basketCount.innerHTML = currentBasket.length;
+             
+                const length =  currentBasket.length;
+                localStorage.setItem('basketLength', length);   
+            
+            }
+        }
+    }
+
+    
+    return productThumnail;
 }
