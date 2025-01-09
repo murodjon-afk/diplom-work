@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+     "dev": "webpack-dev-server --open --mode development",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "json-server -p 3001 -w db.json"
-
+    "start": "json-server -p 3001 -w db.json",
+    "prod": "concurrently \"npm run dev\" \"npm run start\""
   },
   "keywords": [],
   "author": "",
@@ -13,5 +14,8 @@
   "description": "",
   "dependencies": {
     "json-server": "^1.0.0-beta.3"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
   }
 }

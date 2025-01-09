@@ -1798,6 +1798,22 @@
     }
   ],
   "users": [
-   
+    {
+      "id": "943b",
+      "email": "mmmmm@gmai.com",
+      "name": "murod",
+      "phone": "+998 88 460-65-75",
+      "region": "Самарканд",
+      "orders": [],
+      "basket": []
+    },
+    {
+      "id": "24ad",
+      "email": "murod210@gmail.com",
+      "name": "Murod",
+      "phone": "+998 88 460-65-75",
+      "region": "Самарканд",
+      "orders": []
+    }
   ]
 }

@@ -11,8 +11,8 @@ export function showBanner() {
         "../logos/pUW8cv16847430816132_l.jpg",
         "../logos/banner2.jpg",
         "../logos/firstbanner.jpg",
-        "../logos/91FAv5olRuwYQ1JME25pVwMNgFWiVnTU.jpg",
-        "../logos/uzum-sale.jpg"
+        "../logos/91FAv5olRuwYQ1JME25pVwMNgFWiVnTU.jpg"
+       
     ];
 
     let currentIndex = 0;

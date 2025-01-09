@@ -32,3 +32,23 @@ export function goHome2() {
     };
 
 }
+
+export function goHome3() {
+    const logoParent = document.querySelector('.logo-container');
+    logoParent.style.cursor = 'pointer';
+    logoParent.onclick = () => {
+        window.location.href = '/index.html'; 
+    };
+}
+
+export function goHome4() {
+    const input = document.querySelector('input');
+    input.oninput=()=>{
+        window.location.href = '/index.html'; 
+        alert('К сожеление поиск присуствует только глобальном странице !');
+
+    }
+}
+
+
+

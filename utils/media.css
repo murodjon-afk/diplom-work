@@ -20,11 +20,10 @@
     border-radius: 12px;
   }
 
-  .clothes, .shoes, .technieque {
+  .clothes, .shoes, .technieque ,.search-parent{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 48px;
-    padding: 20px;
+
     justify-items: center;
     grid-template-rows: repeat(1);
   }
@@ -43,13 +42,12 @@
 
   header {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     gap: 10px;
     padding: 10px 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
+
 
   .profile-info {
     justify-content: center;
@@ -169,7 +167,7 @@
     margin: auto;
   }
 
-  .clothes, .shoes, .technieque {
+  .clothes, .shoes, .technieque ,.search-parent{
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 48px;
   }
@@ -223,7 +221,7 @@
 
   
 
-  .clothes, .shoes, .technieque {
+  .clothes, .shoes, .techniequ ,.search-parent {
     display: grid;
     grid-template-columns: repeat(2, minmax(190px, 1fr));
     gap: 48px;
@@ -318,7 +316,15 @@
     flex-direction: row;
     gap: 10px;
   }
-
+  .toLove{
+    position: relative;
+    top:-80%;
+    right:-90%;
+    border-radius: 4px;
+    font-size: 20px;
+    width: 80px;
+    z-index: 990;
+  }
   .banner-parent {
     width: 100%;
     max-width: 500px;
@@ -355,7 +361,7 @@
     font-size: 15px;
   }
 
-  .clothes, .shoes, .technieque {
+  .clothes, .shoes, .technieque ,.search-parent{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 20px;
@@ -365,7 +371,6 @@
 
   .card {
     margin: 0 auto;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
 
   .img-container img {
@@ -379,7 +384,7 @@
 }
 
 @media (max-width: 430px) {
-  .clothes, .shoes, .technieque {
+  .clothes, .shoes, .technieque ,.search-parent{
     display: grid;
     grid-template-columns: repeat(2, minmax(150px, 1fr));
     gap: 20px;
@@ -441,7 +446,7 @@
 }
 
 @media (max-width: 410px) {
-  .clothes, .shoes, .technieque {
+  .clothes, .shoes, .technieque ,.search-parent {
     display: grid;
     grid-template-columns: repeat(1, minmax(150px, 1fr));
     gap: 20px;
@@ -497,6 +502,21 @@
 @media (max-width: 1130px) {
   .catalog-container {
     width: 100%;
+  }
+  .uzum-section {
+
+    padding-bottom: 200px;
+
+  
+  
+  }
+  .logo-container{
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  input[type="search"]{
+    width: 500px;
+
   }
   .second-banner{
     width: 1000px;
@@ -575,7 +595,9 @@
   .catalog-container {
     width: 100%;
   }
-
+  input[type="search"] {
+    width: 400px;
+  }
   .second-banner{
     width: 600px;
     height: 300px;
@@ -602,7 +624,15 @@
   .catalog-container {
     width: 100%;
   }
-
+  .img-container{
+    height: 250px;
+  }
+  .img-container img{
+    height: 100%;
+  }
+  input[type="search"] {
+    width: 300px;
+  }
   .second-banner{
     width: 500px;
     height: 250px;
@@ -669,7 +699,7 @@
   .img-container{
     height: 200px;
   }
-  .clothes, .shoes, .technieque ,.groceries{
+  .clothes, .shoes, .technieque ,.groceries ,.search-parent{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); 
     gap: 8px;
@@ -713,7 +743,7 @@
   }
 
 
-  .clothes, .shoes, .technieque ,.groceries{
+  .clothes, .shoes, .technieque ,.groceries .search-parent{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); 
     gap: 8px;
@@ -742,7 +772,63 @@
   }
 }
 
+@media (max-width: 689px) {
+  .media-menu{
+    display: flex;
+    gap: 80px;
+   }
 
+}
+@media (max-width: 612px) {
+  .media-menu{
+    display: flex;
+    gap: 60px;
+   }
+
+}
+
+@media (max-width: 529px) {
+  .media-menu{
+    display: flex;
+    gap: 50px;
+   }
+
+}
+@media (max-width: 484px) {
+  .media-menu{
+    display: flex;
+    gap: 35px;
+   }
+
+}
+@media (max-width: 426px) {
+  .media-menu{
+    display: flex;
+    gap: 25px;
+   }
+
+}
+@media (max-width: 389px) {
+  .media-menu{
+    display: flex;
+    gap: 20px;
+   }
+
+}
+@media (max-width: 389px) {
+  .media-menu{
+    display: flex;
+    gap: 15px;
+   }
+
+}
+@media (max-width: 389px) {
+  .media-menu{
+    display: flex;
+    gap: 10px;
+   }
+
+}
 @media (max-width: 440px) {
   input[type="search"] {
     width: 160px;
@@ -750,3 +836,1458 @@
 
 }
 
+@media (max-width: 487px) {
+  .toLove{
+    position: relative;
+    top:-70%;
+    right:-90%;
+    border-radius: 4px;
+    font-size: 20px;
+    width: 80px;
+    z-index: 990;
+  }
+}
+
+@media (max-width: 460px) {
+  .toLove{
+    position: relative;
+    top:-110%;
+    right:-90%;
+    border-radius: 4px;
+    font-size: 20px;
+    width: 80px;
+    z-index: 990;
+  }
+}
+
+
+@media (max-width: 430px) {
+   .searching-text{
+    font-size: 20px;
+   }
+   .searching-btn{
+    width: 110px;
+    height: 40px;
+   }
+   .searching-info{
+    font-size: 13px;
+   }
+  .tech-category ,.clothes-category ,.shoe-category ,.groceries-category{
+    font-size: 17px;
+  }
+  .tech-count ,.clothes-count ,.shoe-count ,.groceries-count{
+    font-size: 11px;
+  }
+
+  .category-text{
+    padding-bottom: 10px;
+  }
+
+  .catalog-container{
+    height: 200px;
+  }
+  .toLove{
+    position: relative;
+    top:-100%;
+    right:-80%;
+    border-radius: 4px;
+    font-size: 18px;
+    width: 80px;
+    z-index: 990;
+  }
+}
+
+@media (max-width: 385px) {
+  .toLove{
+    position: relative;
+    top:-90%;
+    right:-80%;
+    border-radius: 4px;
+    font-size: 17px;
+    width: 80px;
+    z-index: 990;
+  }
+}
+
+@media (max-width: 350px) {
+  .img-container {
+    height: 150px;
+  }
+  .img-container img {
+    height: 100%;
+  }
+  .toLove{
+    position: relative;
+    top:-100%;
+    right:-80%;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 80px;
+    z-index: 990;
+  }
+  .second-banner{
+    width: 95%;
+  }
+  .banner-parent{
+    width: 95%;
+    height: 200px;
+  }
+
+
+  .global-page{
+    font-size: 12px;
+  }
+  .menu-catalog ,.menu-basket ,.toProfile ,.toHeart{
+    font-size: 12px;
+  }
+  .media-menu{
+    display: flex;
+  }
+}
+
+@media (max-width: 330px) {
+  .clothes, .shoes, .technieque ,.groceries ,.search-parent{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 10fr));
+    justify-items: center;
+  }
+ .title ,.price {
+  font-size: 12px;
+ }
+ .old-price ,.category-p{
+  font-size: 10px;
+ }
+
+ 
+
+}
+
+@media (max-width: 1330px) {
+  .category-beaty ,.category-fregrances ,.category-furniture ,.category-grociries{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    margin-right: 30px;
+    gap: 28px;
+    justify-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 80px;padding-top: 40px;
+    width: 950px;
+
+  }
+}
+
+@media (max-width: 1330px) {
+  .category-beaty ,.category-fregrances ,.category-furniture ,.category-grociries{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    margin-right: 30px;
+    gap: 28px;
+    justify-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 80px;padding-top: 40px;
+    width: 900px;
+ 
+  }
+}
+
+
+@media (max-width: 1161px) {
+  .category-beaty ,.category-fregrances ,.category-furniture ,.category-grociries{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    margin-right: 30px;
+    gap: 28px;
+    justify-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 80px;padding-top: 40px;
+    width: 800px;
+
+  }
+  .img-container{
+    height: 250px;
+  }
+  .img-container img{
+    height: 100%;
+  }
+}
+
+
+@media (max-width: 1107px) {
+  .category-beaty ,.category-fregrances ,.category-furniture ,.category-grociries{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    margin-right: 30px;
+    gap: 28px;
+    justify-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 80px;padding-top: 40px;
+    width: 750px;
+
+  }
+  .img-container{
+    height: 250px;
+  }
+  .img-container img{
+    height: 100%;
+  }
+}
+
+
+@media (max-width: 1067px) {
+  .category-beaty ,.category-fregrances ,.category-furniture ,.category-grociries{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    margin-right: 30px;
+    gap: 28px;
+    justify-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 80px;padding-top: 40px;
+    width: 700px;
+
+  }
+  .img-container{
+    height: 250px;
+  }
+  .img-container img{
+    height: 100%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .category-beaty ,.category-fregrances ,.category-furniture ,.category-grociries{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    margin-right: 30px;
+    gap: 28px;
+    justify-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 80px;padding-top: 40px;
+    width: 670px;
+
+  }
+  .img-container{
+    height: 250px;
+  }
+  .img-container img{
+    height: 100%;
+  }
+  .price-container2{
+    width: 250px;
+  }
+  .input1 ,.input2{
+    width: 150px;
+    margin-left: -20px;
+  }
+  input[type="range"] {
+    width: 50%;
+    margin-right: 90px;
+  }
+}
+
+@media (max-width: 948px) {
+  .category-beaty ,.category-fregrances ,.category-furniture ,.category-grociries{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    margin-right: 30px;
+    gap: 28px;
+    justify-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 80px;padding-top: 40px;
+    width: 650px;
+
+  }
+
+  .img-container{
+    height: 300px;
+  }
+  .img-container img{
+    height: 100%;
+  }
+}
+
+
+@media (max-width: 924px) {
+  .category-beaty ,.category-fregrances ,.category-furniture ,.category-grociries{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    margin-right: 30px;
+    gap: 28px;
+    justify-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 80px;padding-top: 40px;
+    width: 600px;
+
+  }
+
+  .img-container{
+    height: 300px;
+  }
+  .img-container img{
+    height: 100%;
+  }
+}
+
+
+@media (max-width: 924px) {
+  .category-beaty ,.category-fregrances ,.category-furniture ,.category-grociries{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    margin-right: 30px;
+    gap: 28px;
+    justify-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 80px;padding-top: 40px;
+    width: 900px;
+
+
+  }
+  header{
+    width: 100%;
+    padding-bottom: 20px;
+    display: flex;
+    align-items: center;
+  }
+  .price-container2 {
+    display: none;
+    width:100%;
+    height:100%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+.ctg{
+  display: none;
+}
+.ctg-parent {
+  position: relative;
+  width: 300px;
+ margin: 20px 0%;
+  left: 40%;
+  transform: translate( -40%);
+}
+
+.openFilter-ctg{
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: block;
+}
+.cansel-ctg{
+  background: none;
+  border: none;
+  display: flex;
+}
+input[type="range"] {
+  width: 300px;
+  position: absolute; 
+  top: 50%;           
+  left: 50%;          
+  transform: translate(-50%, -50%); 
+}
+.range-slider {
+  position: relative;
+}
+
+  .ctg-parent{
+    display: flex;
+    flex-direction: row;
+    gap: 0px;
+  }
+  .input1 ,.input2{
+    width: 400px;
+    height: 35px;
+  }
+  .img-container{
+    height: 300px;
+  }
+  .img-container img{
+    height: 100%;
+  }
+  .beauty ,.grocerie ,.fragrances ,.furniture{
+    font-size: 15px;
+  }
+  .accept-Filter{
+    display: block;
+    margin: 0% auto;
+    }
+}
+
+@media (max-width: 925px){
+  .price-container2 {
+    display: none;}
+} 
+
+@media (max-width: 865px) {
+  .category-beaty ,.category-fregrances ,.category-furniture ,.category-grociries{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    margin-right: 30px;
+    gap: 28px;
+    justify-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 80px;padding-top: 40px;
+    width: 800px;
+
+
+  }
+}
+
+@media (max-width: 796px) {
+  .category-beaty ,.category-fregrances ,.category-furniture ,.category-grociries{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    margin-right: 30px;
+    gap: 28px;
+    justify-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 80px;padding-top: 40px;
+    width: 750px;
+
+
+  }
+}
+
+@media (max-width: 764px) {
+  .category-beaty ,.category-fregrances ,.category-furniture ,.category-grociries{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    margin-right: 30px;
+    gap: 28px;
+    justify-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 80px;padding-top: 40px;
+    width: 700px;
+
+  }
+}
+
+@media (max-width: 719px) {
+  .category-beaty ,.category-fregrances ,.category-furniture ,.category-grociries{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    margin-right: 0px;
+    gap: 28px;
+    justify-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 80px;padding-top: 40px;
+    width: 650px;
+
+
+  }
+  .ctg-parent {
+    position: relative;
+    width: 300px;
+   margin: 20px 0%;
+    left: 30%;
+    transform: translate( -30%);
+  }
+}
+
+@media (max-width: 677px) {
+  .category-beaty ,.category-fregrances ,.category-furniture ,.category-grociries{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    margin-right: 0px;
+    gap: 28px;
+    justify-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 80px;padding-top: 40px;
+    width: 677px;
+
+
+  }
+
+  .img-container{
+    height: 200px;
+  }
+
+  .img-container img{
+    height: 100%;
+  }
+}
+
+
+@media (max-width: 677px) {
+  .category-beaty ,.category-fregrances ,.category-furniture ,.category-grociries{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    margin-right: 0px;
+    gap: 28px;
+    justify-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 80px;padding-top: 40px;
+    width: 550px;
+
+
+  }
+  .price{
+    font-size: 15px;
+  }
+  .old-price{
+    font-size: 13px;
+  }
+
+  .title{
+    font-size: 12px;
+  }
+
+  .img-container{
+    height: 180px;
+  }
+
+  .toLove{
+    position: relative;
+    top:-100%;
+    right:-85%;
+    border-radius: 4px;
+    font-size: 20px;
+    width: 80px;
+    z-index: 990;
+  }
+
+  .category-p{
+    font-size: 12px;
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-right: 0px;
+  }
+  
+}
+
+
+@media (max-width: 519px) {
+  .category-beaty ,.category-fregrances ,.category-furniture ,.category-grociries{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    margin-right: 0px;
+    gap: 28px;
+    justify-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 80px;padding-top: 40px;
+    width: 519px;
+
+
+  }
+  .ctg-parent {
+    position: relative;
+    width: 300px;
+   margin: 20px 0%;
+    left: 20%;
+    transform: translate( -20%);
+  }
+}
+
+@media (max-width: 490px) {
+  .category-beaty ,.category-fregrances ,.category-furniture ,.category-grociries{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    margin-right: 0px;
+    gap: 28px;
+    justify-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 80px;padding-top: 40px;
+    width: 490px;
+
+
+  }
+}
+
+@media (max-width: 470px) {
+  .category-beaty ,.category-fregrances ,.category-furniture ,.category-grociries{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    margin-right: 0px;
+    gap: 28px;
+    justify-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 80px;padding-top: 40px;
+    width: 470px;
+
+
+  }
+}
+
+@media (max-width: 450px) {
+  .category-beaty ,.category-fregrances ,.category-furniture ,.category-grociries{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    margin-right: 0px;
+    gap: 28px;
+    justify-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 80px;padding-top: 40px;
+    width: 450px;
+
+
+  }
+  .input1 ,.input2{
+    width: 250px;}
+    input[type="range"] {
+      display: block;
+      width: 80%;
+      margin: 0 auto;
+  }
+  .price-range-text{
+    font-size: 11px;
+  }
+  
+  
+}
+
+@media (max-width: 422px) {
+  .category-beaty ,.category-fregrances ,.category-furniture ,.category-grociries{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    margin-right: 0px;
+    gap: 28px;
+    justify-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 80px;padding-top: 40px;
+    width: 422px;
+
+
+  }
+
+}
+
+@media (max-width: 390px) {
+  .category-beaty ,.category-fregrances ,.category-furniture ,.category-grociries{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    margin-right: 0px;
+    gap: 28px;
+    justify-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 80px;padding-top: 40px;
+    width: 390px;
+
+
+  }
+}
+
+@media (max-width: 370px) {
+  .category-beaty ,.category-fregrances ,.category-furniture ,.category-grociries{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    margin-right: 0px;
+    gap: 28px;
+    justify-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 80px;padding-top: 40px;
+    width: 370px;
+
+
+  }
+}
+
+
+@media (max-width: 350px) {
+  .category-beaty ,.category-fregrances ,.category-furniture ,.category-grociries{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    margin-right: 0px;
+    gap: 28px;
+    justify-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 80px;padding-top: 40px;
+    width: 350px;
+
+
+  }
+}
+
+@media (max-width: 320px) {
+  .category-beaty ,.category-fregrances ,.category-furniture ,.category-grociries{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    margin-right: 0px;
+    gap: 28px;
+    justify-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 80px;padding-top: 40px;
+    width: 320px;
+
+
+  }
+}
+
+@media (max-width: 677px) {
+  .category-beaty ,.category-fregrances ,.category-furniture ,.category-grociries{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    margin-right: 0px;
+    gap: 28px;
+    justify-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 80px;padding-top: 40px;
+    width: 677px;
+
+
+  }}
+
+  @media (max-width: 655px) {
+    .category-beaty ,.category-fregrances ,.category-furniture ,.category-grociries{
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      margin-right: 0px;
+      gap: 28px;
+      justify-items: center;
+      padding-left: 15px;
+      padding-right: 15px;
+      padding-bottom: 80px;padding-top: 40px;
+      width: 655px;
+  
+  
+    }}
+
+    @media (max-width: 610px) {
+      .category-beaty ,.category-fregrances ,.category-furniture ,.category-grociries{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        margin-right: 0px;
+        gap: 28px;
+        justify-items: center;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-bottom: 80px;padding-top: 40px;
+        width: 610px;
+    
+    
+      }
+      .ctg-h1{
+        font-size: 25px;
+        padding-bottom: 10px;
+        padding-left: 5px;
+      }}
+
+      @media (max-width: 583px) {
+        .category-beaty ,.category-fregrances ,.category-furniture ,.category-grociries{
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+          margin-right: 0px;
+          gap: 28px;
+          justify-items: center;
+          padding-left: 15px;
+          padding-right: 15px;
+          padding-bottom: 80px;padding-top: 40px;
+          width: 583px;
+      
+      
+        }
+        .ctg-h1{
+          font-size: 25px;
+          padding-bottom: 10px;
+          padding-left: 5px;
+        }}
+
+
+        @media (max-width: 550px) {
+          .category-beaty ,.category-fregrances ,.category-furniture ,.category-grociries{
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            margin-right: 0px;
+            gap: 28px;
+            justify-items: center;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-bottom: 80px;padding-top: 40px;
+            width: 550px;
+        
+        
+          }
+          .ctg-h1{
+            font-size: 25px;
+            padding-bottom: 10px;
+            padding-left: 5px;
+          }}
+
+          @media (max-width: 520px) {
+            .category-beaty ,.category-fregrances ,.category-furniture ,.category-grociries{
+              display: grid;
+              grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+              margin-right: 0px;
+              gap: 28px;
+              justify-items: center;
+              padding-left: 15px;
+              padding-right: 15px;
+              padding-bottom: 80px;padding-top: 40px;
+              width: 520px;
+          
+          
+            }
+            .ctg-h1{
+              font-size: 25px;
+              padding-bottom: 10px;
+              padding-left: 5px;
+            }}
+
+
+            @media (max-width: 500px) {
+              .category-beaty ,.category-fregrances ,.category-furniture ,.category-grociries{
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                margin-right: 0px;
+                gap: 28px;
+                justify-items: center;
+                padding-left: 15px;
+                padding-right: 15px;
+                padding-bottom: 80px;padding-top: 40px;
+                width: 500px;
+            
+            
+              }
+              .ctg-h1{
+                font-size: 25px;
+                padding-bottom: 10px;
+                padding-left: 5px;
+              }
+            
+            }
+
+              
+              @media (max-width: 490px) {
+                .category-beaty, .category-fregrances, .category-furniture, .category-grociries {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                    margin-right: 0px;
+                    gap: 28px;
+                    justify-items: center;
+                    padding-left: 0px;
+                    padding-right: 0px;
+                    padding-bottom: 80px;
+                    padding-top: 40px;
+                    width: 490px;
+                }
+                .ctg-h1{
+                  font-size: 25px;
+                  padding-bottom: 10px;
+                  padding-left: 5px;
+                }
+            }
+            
+            @media (max-width: 480px) {
+                .category-beaty, .category-fregrances, .category-furniture, .category-grociries {
+                    width: 480px;
+                }
+                .ctg-h1{
+                  font-size: 25px;
+                  padding-bottom: 10px;
+                  padding-left: 5px;
+                }
+            }
+            
+            @media (max-width: 470px) {
+                .category-beaty, .category-fregrances, .category-furniture, .category-grociries {
+                    width: 470px;
+                }
+
+                .accept-Filter{
+                  width: 460px;
+                }
+
+                .ctg-parent {
+                  position: relative;
+                  width: 300px;
+                 margin: 20px 0%;
+                  left: 15%;
+                  transform: translate( -15%);
+                }
+                .ctg-h1{
+                  font-size: 25px;
+                  padding-bottom: 10px;
+                  padding-left: 5px;
+                }
+            }
+            
+            @media (max-width: 460px) {
+                .category-beaty, .category-fregrances, .category-furniture, .category-grociries {
+                    width: 460px;
+                }
+
+                .accept-Filter{
+                  width: 450px;
+                }
+
+                .ctg-parent {
+                  position: relative;
+                  width: 300px;
+                 margin: 20px 0%;
+                  left: 15%;
+                  transform: translate( -15%);
+                }
+                .ctg-h1{
+                  font-size: 25px;
+                  padding-bottom: 10px;
+                  padding-left: 5px;
+                }
+            }
+            
+            @media (max-width: 450px) {
+                .category-beaty, .category-fregrances, .category-furniture, .category-grociries {
+                    width: 450px;
+                }
+                .accept-Filter{
+                  width: 440px;
+                }
+
+                .ctg-parent {
+                  position: relative;
+                  width: 300px;
+                 margin: 20px 0%;
+                  left: 15%;
+                  transform: translate( -15%);
+                }
+                     .ctg-h1{
+                  font-size: 25px;
+                  padding-bottom: 10px;
+                  padding-left: 5px;
+                }
+            }
+            
+            @media (max-width: 440px) {
+                .category-beaty, .category-fregrances, .category-furniture, .category-grociries {
+                    width: 440px;
+                }
+                .accept-Filter{
+                  width: 430px;
+                }
+                .ctg-h1{
+                  font-size: 25px;
+                  padding-bottom: 10px;
+                  padding-left: 5px;
+                }
+            }
+            
+            @media (max-width: 430px) {
+                .category-beaty, .category-fregrances, .category-furniture, .category-grociries {
+                    width: 430px;
+                }
+                .accept-Filter{
+                  width: 420px;
+                }
+                .ctg-h1{
+                  font-size: 25px;
+                  padding-bottom: 10px;
+                  padding-left: 5px;
+                }
+            }
+            
+            @media (max-width: 420px) {
+                .category-beaty, .category-fregrances, .category-furniture, .category-grociries {
+                    width: 420px;
+                }
+                .accept-Filter{
+                  width: 410px;
+                }
+                .ctg-h1{
+                  font-size: 25px;
+                  padding-bottom: 10px;
+                  padding-left: 5px;
+                }
+            }
+            
+            @media (max-width: 410px) {
+                .category-beaty, .category-fregrances, .category-furniture, .category-grociries {
+                    width: 410px;
+                }
+                .accept-Filter{
+                  width: 400px;
+                }
+                .ctg-parent {
+                  position: relative;
+                  width: 300px;
+                 margin: 20px 0%;
+                  left: 5%;
+                  transform: translate( -10%);
+                }
+                .ctg-h1{
+                  font-size: 20px;
+                  padding-bottom: 10px;
+                  padding-left: 5px;
+                }
+            }
+            
+            @media (max-width: 400px) {
+                .category-beaty, .category-fregrances, .category-furniture, .category-grociries {
+                    width: 400px;
+                }
+                .accept-Filter{
+                  width: 390px;
+                }
+                .ctg-h1{
+                  font-size: 20px;
+                  padding-bottom: 10px;
+                  padding-left: 5px;
+                }
+            }
+            
+            @media (max-width: 390px) {
+                .category-beaty, .category-fregrances, .category-furniture, .category-grociries {
+                    width: 390px;
+                }
+                .accept-Filter{
+                  width: 380px;
+                }
+                .ctg-h1{
+                  font-size: 20px;
+                  padding-bottom: 10px;
+                  padding-left: 5px;
+                }
+            }
+            
+            @media (max-width: 380px) {
+                .category-beaty, .category-fregrances, .category-furniture, .category-grociries {
+                    width: 380px;
+                }
+                .accept-Filter{
+                  width: 370px;
+                }
+
+                .ctg-parent {
+                  position: relative;
+                  width: 300px;
+                 margin: 20px 0%;
+                  left: 1%;
+  
+                }
+                .ctg-h1{
+                  font-size: 20px;
+                  padding-bottom: 10px;
+                  padding-left: 5px;
+                }
+            }
+            
+            @media (max-width: 370px) {
+                .category-beaty, .category-fregrances, .category-furniture, .category-grociries {
+                    width: 370px;
+                }
+                .accept-Filter{
+                  width: 360px;
+                }
+                .ctg-h1{
+                  font-size: 20px;
+                  padding-bottom: 10px;
+                  padding-left: 5px;
+                }
+            }
+            
+            @media (max-width: 360px) {
+                .category-beaty, .category-fregrances, .category-furniture, .category-grociries {
+                    width: 360px;
+                }
+                .accept-Filter{
+                  width: 350px;
+                }
+
+                .ctg-parent {
+                  position: relative;
+                  width: 300px;
+                 margin: 20px 0%;
+                  left: 1%;
+                }
+                .beauty ,.grocerie,.fragrances,.furniture{
+                  font-size: 14px;
+                }
+                .ctg-h1{
+                  font-size: 20px;
+                  padding-bottom: 10px;
+                  padding-left: 5px;
+                }
+            }
+            
+            @media (max-width: 350px) {
+                .category-beaty, .category-fregrances, .category-furniture, .category-grociries {
+                    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+                    width: 350px;
+                }
+                .accept-Filter{
+                  width: 340px;
+                }
+                .ctg-h1{
+                  font-size: 20px;
+                  padding-bottom: 10px;
+                  padding-left: 5px;
+                }
+            }
+            
+            @media (max-width: 340px) {
+                .category-beaty, .category-fregrances, .category-furniture, .category-grociries {
+                    width: 340px;
+                }
+                .accept-Filter{
+                  width: 330px;
+                }
+                .ctg-parent {
+                  position: relative;
+                  width: 300px;
+                 margin: 20px 0%;
+                  left: 1%;
+                }
+                .beauty ,.grocerie,.fragrances,.furniture{
+                  font-size: 13px;
+                }
+            }
+            
+            @media (max-width: 330px) {
+                .category-beaty, .category-fregrances, .category-furniture, .category-grociries {
+                    width: 330px;
+                }
+                .accept-Filter{
+                  width: 320px;
+                }
+                .ctg-parent {
+                  position: relative;
+                  width: 300px;
+                 margin: 20px 0%;
+                  left: 2%;
+                }
+                .beauty ,.grocerie,.fragrances,.furniture{
+                  font-size: 12px;
+                }
+            }
+            
+            @media (max-width: 320px) {
+                .category-beaty, .category-fregrances, .category-furniture, .category-grociries {
+                    width: 320px;
+                }
+                .accept-Filter{
+                  width: 310px;
+                }
+
+                .ctg-parent {
+                  position: relative;
+                  width: 300px;
+                 margin: 20px 0%;
+                  left: 0%;
+                }
+                .beauty ,.grocerie,.fragrances,.furniture{
+                  font-size: 12px;
+                }
+            }
+
+
+            @media (max-width: 523px){
+       
+                .lovely{
+                  padding-top: 0px;
+                  padding-bottom: 0px;
+                  display: grid;
+                  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                  gap: 28px;
+                  justify-items: center;
+                  width: 100%;
+                  padding-left: 0px;
+                  padding-right: 0px;
+                }
+
+                .lovely-text{
+                  padding-left: 10px;
+                  padding-bottom: 31px;
+                  padding-top:40px ;
+                }
+                
+              }
+
+              
+
+            @media (max-width: 428px){
+       
+              .lovely{
+                padding-top: 0px;
+                padding-bottom: 0px;
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+                gap: 28px;
+                justify-items: center;
+                width: 100%;
+                padding-left: 0px;
+                padding-right: 0px;
+              }
+              
+            }
+
+            @media (max-width: 387px){
+       
+              .lovely{
+                padding-top: 0px;
+                padding-bottom: 0px;
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+                gap: 28px;
+                justify-items: center;
+                width: 100%;
+                padding-left: 0px;
+                padding-right: 0px;
+              }
+              
+            }
+
+            @media (max-width: 367px){
+       
+              .lovely{
+                padding-top: 0px;
+                padding-bottom: 0px;
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+                gap: 28px;
+                justify-items: center;
+                width: 100%;
+                padding-left: 0px;
+                padding-right: 0px;
+              }
+              
+            }
+
+            @media (max-width: 348px){
+       
+              .lovely{
+                padding-top: 0px;
+                padding-bottom: 0px;
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(145px, 1fr));
+                gap: 28px;
+                justify-items: center;
+                width: 100%;
+                padding-left: 10px;
+                padding-right: 10px;
+              }
+              
+            }
+
+            
+            @media (max-width: 338px){
+       
+              .lovely{
+                padding-top: 0px;
+                padding-bottom: 0px;
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+                gap: 18px;
+                justify-items: center;
+                width: 100%;
+                padding-left: 10px;
+                padding-right: 10px;
+              }
+              
+            }
+          
+
+            @media (max-width: 1079px){
+              .basket-pay ,.pay-parent {
+                width: 350px;
+       
+              }
+
+              .btn-pay{
+                width: 280px;
+              }
+              .basket-item{
+                height: 70vh;
+              }
+            }
+
+            @media (max-width: 1000px){
+              .basket-pay  {
+               position: fixed;
+               bottom: 70px;
+              right: 0;
+       
+              }
+
+              .pay-parent{
+                position: fixed;
+                bottom: 70px;
+                left: 0;
+              }
+
+
+       
+            }
+          
+
+            
+            @media (max-width: 762px){
+              .basket-pay {
+                width: 90%;
+                position: fixed;
+                left: 50%;
+                transform: translateX(-50%);
+                height: 110px;
+                padding-bottom: 10px;
+            }
+
+            .btn-pay{
+              width: 90%;
+              height: 35px;
+              margin-bottom: 10px;
+            }
+            .basket-price {
+              padding-bottom: 0px;}
+              .price-info{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                gap: 60px;
+              }
+              .pay-parent{
+                
+              display: none;
+              }
+         .basket-item{
+          margin-left: 10px;
+         }
+              .basket-text{
+           
+                padding-left: 10px;
+              }
+       
+            }
+          
+            
+            
+            @media (max-width: 623px){ 
+              .text-heart h1{
+                font-size: 25px;
+              }
+
+              .text-heart p{
+                font-size: 12px;
+              }
+            }
+
+            @media (max-width: 467px){ 
+              .text-heart h1{
+                font-size: 20px;
+              }
+
+              .text-heart p{
+                font-size: 10px;
+              }
+              .heart{
+                width: 100px;
+                height: 100px;
+              }
+              .toPage2{
+                width: 150px;
+                height: 40px;
+              }
+            }
+
+
+            @media (min-width: 1580px){
+              .banner-parent ,.second-banner{
+                height: 570px;
+              }
+              .clothes, .shoes, .technieque ,.groceries, .search-parent{
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+                gap: 48px;
+                padding: 10px;
+                justify-items: center; 
+               grid-template-rows: repeat(1);
+              }
+              .price{
+                font-size: 20px;
+              }
+              .old-price{
+                font-size: 15px;
+              }
+              .title{
+                font-size: 15px;
+                font-weight: 600;
+              }
+              .category-p{
+                font-size: 15px;
+              }
+              .toLove{
+                font-size: 30px;
+              }
+
+              .cart-icon svg{
+              width: 35px;
+              height: 35px;
+              }
+              .showMore ,.showMore2 ,.showMore3 ,.showMore4{
+                width: 200px;
+                height: 60px;
+                font-size: 20px;
+              }
+
+              header{
+                height: 75px;
+              }
+              input[type="search"] {
+                width: 650px;
+                height: 55px;
+                padding-left: 20px;
+              }
+
+              .catalog{
+                width: 150px;
+                height: 55px;
+              }
+              
+              .logo-container .log {
+                width: 45px;
+                height: 45px;
+                background-color: #ddd; 
+                border-radius: 50%;
+              }
+
+            .logo-container .logo-text{
+              font-size: 30px;
+            }
+
+            button.signin svg {
+              width: 25px !important;
+              height: 25px !important;
+          }
+          .profile-nick {
+            font-size: 20px;
+        }
+
+        .tofovorite{
+          font-size: 20px !important;
+          color: aliceblue;
+        }
+
+        .basket{
+          font-size: 20px !important;
+        }
+        
+       
+          
+
+            
+             }
+
+
+           

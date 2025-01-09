@@ -1,5 +1,6 @@
 import { goHome } from "./comeback.js";
 import { createSimilar } from "../utils/productCard.js";
+import { Sigin } from "./sigin.js";
 
 
 import { createProductCard } from "../utils/productCard.js";
@@ -32,4 +33,5 @@ fetch(`http://localhost:3001/products/${productId}`)
     });
 
     goHome()
+    Sigin();
 
