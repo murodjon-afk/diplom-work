@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-     "dev": "webpack-dev-server --open --mode development",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "json-server -p 3001 -w db.json",
-    "prod": "concurrently \"npm run dev\" \"npm run start\""
-  },
+  "dev": "webpack-dev-server --open --mode development",
+  "start": "json-server -p 3001 -w db.json",
+  "prod": "concurrently \"npm run dev\" \"npm run start\"",
+  "build": "webpack --mode production"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
