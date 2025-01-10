@@ -12,6 +12,7 @@
     <title>Uzum Product Clone</title>
 </head>
 <body>
+  <div class="overlay"></div>
     <section class="uzum-section2">
           <div class="media-menu">
         <button class="global-page"><img src="../logos/Vector (3).png" alt="Главная страница" Главная Страница>Главная </button>
@@ -38,10 +39,10 @@
               </g>
             </svg>
             Корзина
-          </button>
+          </button> <div class="basket-count3">0</div>
           <button class="toProfile"><svg height="30" viewBox="0 0 12 12" width="30" xmlns="http://www.w3.org/2000/svg"><path d="m8.5 6c.82843 0 1.5.67157 1.5 1.5 0 1.11608-.45897 2.01027-1.21215 2.6148-.74127.595-1.73477.8852-2.78785.8852s-2.04658-.2902-2.78785-.8852c-.75318-.60453-1.21215-1.49872-1.21215-2.6148 0-.77966118.59487668-1.42044457 1.3555213-1.49313306l.1444587-.00686694zm-2.5-5c1.10457 0 2 .89543 2 2s-.89543 2-2 2-2-.89543-2-2 .89543-2 2-2z" fill="#7000ff"/></svg><p class="toprofile-text">Войти</p></button>          
             <button class="toHeart"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path d="M6.28 3c3.236.001 4.973 3.491 5.72 5.031.75-1.547 2.469-5.021 5.726-5.021 2.058 0 4.274 1.309 4.274 4.182 0 3.442-4.744 7.851-10 13-5.258-5.151-10-9.559-10-13 0-2.676 1.965-4.193 4.28-4.192zm.001-2c-3.183 0-6.281 2.187-6.281 6.192 0 4.661 5.57 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-4.011-3.097-6.182-6.274-6.182-2.204 0-4.446 1.042-5.726 3.238-1.285-2.206-3.522-3.248-5.719-3.248z" fill="#7000ff"/></svg>Избранное</button>
-          <div class="overlay"></div>
+       
      
       </div>
      </div>
@@ -189,21 +190,25 @@
               <div class="sim-beauty-parent">
                   <h1 class="sim-baeuty-text">Похожые товары</h1>
                   <div class="similar-beauty"></div>
+                  <button class="showMore">Показать еще</button>
               </div>
       
               <div class="sim-fragrances-parent">
                   <h1 class="sim-fragrances-text">Похожые товары</h1>
                   <div class="similar-fragrances"></div>
+                  <button class="showMore2">Показать еще</button>
               </div>
       
               <div class="sim-furniture-parent">
                   <h1 class="sim-furniture-text">Похожые товары</h1>
                   <div class="similar-furniture"></div>
+                  <button class="showMore3">Показать еще</button>
               </div>
       
               <div class="sim-groceries-parent">
                   <h1 class="sim-groceries-text">Похожые товары</h1>
                   <div class="similar-groceries"></div>
+                  <button class="showMore4">Показать еще</button>
               </div>
           </div>
       </div>
@@ -263,6 +268,50 @@
         <button class="add-basket">Добавить в Корзину</button>
         <button class="add-fovorite">Добавить в Избранное</button>
       </div>
+
+
+      <div class="payment-module">
+        <h1 class="paymentH1">Оплата С</h1>
+         <div class="payment-card">
+          <button class="forMoney"><img src="../logos/88085154-un-dólar-ilustración-vectorial.jpg" alt=""><p>В наличии</p></button>
+          <button class="forUzCard"><img src="../logos/companies_16258205674660_o.jpg" alt=""><p>С UzCard </p></button>
+           <button class="forMasterCard"><img src="../logos/mastercard-icon-2048x1587-tygju446.png" alt=""><p>С Master card </p></button>
+          <button class="forHumo"><img src="../logos/images.png" alt=""><p>С HUMO</p></button>
+         </div>
+         <button class="pay-cansel">Отменить</button>
+       </div>
+  
+       <div class="order-block">
+        <h1   class="card-h1-pay">Введите ваши данные </h1>
+        <div class="pay-input">
+         <form > <input type="text" id="card-number" name="card-number"  placeholder="Введите номер карточки"  oninput="this.value = this.value.replace(/[^0-9]/g, '')" required class="pay-input">   
+        <div class="card-info">
+          <input type="password" placeholder="0 0 0 0"  oninput="this.value = this.value.replace(/[^0-9]/g, '')" class="card-password">
+         <div class="card-dates">
+          <input type="text" class="card-data"  oninput="this.value = this.value.replace(/[^0-9]/g, '')" placeholder="Month">
+          /
+          <input type="text" class="data-year"  oninput="this.value = this.value.replace(/[^0-9]/g, '')" placeholder="Year">
+        </div>
+         </div>
+        </form> 
+        <div class="payorcansel">
+          <button class="cansel-product">Отменить Действия</button>
+          <button class="btn-pay-product">Далее</button>
+        </div> </div>
+       </div>
+  
+       <div class="info-pay">
+     <div class="pay-total">
+      <h1 class="totalPrice">Неизвестно</h1>
+      <p class="totalSale">Неизвестно</p>
+      <p class="totalCount">Неизвестно</p>
+     
+     </div>
+    <div class="buyorignore">
+      <button class="ignore">Отменить</button>
+      <button class="tatalPaybtn">Заказать</button>
+    </div>
+       </div>
     </section>
  
 

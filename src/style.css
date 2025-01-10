@@ -1220,6 +1220,8 @@ margin-left: 100px;
   text-align: start;
   padding-left: 40px;
   font-size: 22px;
+}     .sigin-input {
+  margin-bottom: 10px;
 }
 
 .sigin-p{
@@ -1227,13 +1229,52 @@ margin-left: 100px;
   padding-left: 40px;
   font-size: 18px;
 }
+.pay-input{
+  width: 450px;
+  background-color: #dde4ea;
+  border: none;
+  height: 40px;
+  border-radius: 5px;
+  padding-left: 5px;
+  margin: 0% auto;
+}
 
+.card-info{
+  display: flex;
+  gap: 100px;
+}
+.card-data ,.data-year{
+  width: 60px;
+  background-color: #dde4ea;
+  border: none;
+  height: 40px;
+  border-radius: 5px;
+  padding-left: 5px;
+  margin: 0% auto;
+}
+
+.card-password{
+  width: 200px;
+  background-color: #dde4ea;
+  border: none;
+  height: 40px;
+  border-radius: 5px;
+  padding-left: 5px;
+  margin: 0% auto;
+}
 form{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 10px;
+}
+
+.card-h1-pay{
+  text-align: center;
+  padding-top: 10px;
+  color: rgb(69, 22, 179);
+  padding-bottom: 10px;
 }
 
 .sigin-input ,.nickname ,.birthDate{
@@ -1307,10 +1348,193 @@ padding-left: 80%;
   padding-top: 5px;
    
   }
-  .hidden {
-    display: none;
+
+
+.payment-module {
+  position: fixed;
+  display: none;
+  z-index: 1000;
+  width: 500px;
+  height: 200px;
+  background-color: #f0e8ff;
+  border-radius: 5px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
+.info-pay{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  width: 400px;
+  height: 150px;
+  background-color: #f0e8ff;
+  border-radius: 5px;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+.card-dates{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pay-total{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-left: 15px;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  
+}
+.buyorignore{
+  display: flex;
+  gap: 10px;
+}
+.tatalPaybtn ,.ignore{
+  width: 150px;
+  height: 35px;
+  border: none;
+  background-color: #5900ff;
+  color: white;
+  border-radius: 5px;
+  font-weight: 550;
+  margin: 0% auto;
+  cursor: pointer;
+}
+
+.order-block{
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  width: 500px;
+  height: 200px;
+  background-color: #f0e8ff;
+  border-radius: 5px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.forMoney img{
+  width: 70px;
+  height: 70px;
+  border-radius: 50px;
+}
+
+.forUzCard img{
+  width: 70px;
+  height: 70px;
+  border-radius: 50px;
+}
+
+.forMasterCard img{
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+}
+
+.forHumo:hover, .forMasterCard:hover, .forMoney:hover, .forUzCard:hover {
+  transform: scale(1.05);
+}
+
+.forMoney:hover p, .forHumo:hover p, .forMasterCard:hover p, .forUzCard:hover p {
+  color: rgb(75, 50, 97);
+}
+.payorcansel{
+  display: flex;
+  gap: 30px;
+}
+.pay-cansel ,.cansel-product {
+  width: 150px;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  color: #5900ff;
+  background-color: #e5ddf4;
+  margin: 0 auto; 
+  display: block; 
+  text-align: center; 
+  cursor: pointer; 
+  margin-top: 10px;
+  font-weight: 550;
+}
+
+
+.btn-pay-product{
+  width: 150px;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  color: #5900ff;
+  background-color: #e5ddf4;
+  margin: 0 auto; 
+  display: block; 
+  text-align: center; 
+  cursor: pointer; 
+  margin-top: 10px;
+  font-weight: 550;
+}
+
+.btn-pay-product:hover{
+  background-color: rgb(167, 221, 167);
+  color: green;
+}
+
+
+
+.pay-cansel:hover ,.cansel-product:hover {
+color: red;
+background-color: rgb(244, 180, 180);
+}
+
+
+.paymentH1 {
+  margin: 0;
+  text-align: center;
+  padding-top: 10px;
+  color: grey;
+}
+
+.payment-card{
+  padding-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.forHumo img{
+  width: 70px;
+  height: 70px;
+  border-radius: 50px;
+}
+
+.forMoney ,.forUzCard ,.forMasterCard ,.forHumo{
+border: none;
+background: none;
+cursor: pointer;
+}
+
+.forMoney p {
+ color: rgb(163, 163, 163);
+  }
+  .forHumo p {
+    color: rgb(163, 163, 163);
+     }
+ .forMasterCard p{
+  color: rgb(163, 163, 163);
+ }
+  .forUzCard p {
+    color: rgb(163, 163, 163);
+     }
 
   .showMore ,.showMore2 ,.showMore3 ,.showMore4{
     display: none;
@@ -1581,9 +1805,8 @@ header {
   border-radius: 5px;
 }
 .pay-Basket-parent{
-  display: flex;
-
-  flex-direction: column;
+display: flex;
+flex-direction: column;
 justify-content: center;
 align-items: center;
 }

@@ -168,6 +168,49 @@
 
              </div>
      </header>
+     <div class="payment-module">
+      <h1 class="paymentH1">Оплата С</h1>
+       <div class="payment-card">
+        <button class="forMoney"><img src="./logos/88085154-un-dólar-ilustración-vectorial.jpg" alt=""><p>В наличии</p></button>
+        <button class="forUzCard"><img src="./logos/companies_16258205674660_o.jpg" alt=""><p>С UzCard </p></button>
+         <button class="forMasterCard"><img src="./logos/mastercard-icon-2048x1587-tygju446.png" alt=""><p>С Master card </p></button>
+        <button class="forHumo"><img src="./logos/images.png" alt=""><p>С HUMO</p></button>
+       </div>
+       <button class="pay-cansel">Отменить</button>
+     </div>
+
+     <div class="order-block">
+      <h1   class="card-h1-pay">Введите ваши данные </h1>
+      <div class="pay-input">
+       <form > <input type="text" id="card-number" name="card-number"  placeholder="Введите номер карточки"  oninput="this.value = this.value.replace(/[^0-9]/g, '')" required class="pay-input">   
+      <div class="card-info">
+        <input type="password" placeholder="0 0 0 0"  oninput="this.value = this.value.replace(/[^0-9]/g, '')" class="card-password">
+       <div class="card-dates">
+        <input type="text" class="card-data"  oninput="this.value = this.value.replace(/[^0-9]/g, '')" placeholder="Month">
+        /
+        <input type="text" class="data-year"  oninput="this.value = this.value.replace(/[^0-9]/g, '')" placeholder="Year">
+      </div>
+       </div>
+      </form> 
+      <div class="payorcansel">
+        <button class="cansel-product">Отменить Действия</button>
+        <button class="btn-pay-product">Далее</button>
+      </div> </div>
+     </div>
+
+     <div class="info-pay">
+   <div class="pay-total">
+    <h1 class="totalPrice">Неизвестно</h1>
+    <p class="totalSale">Неизвестно</p>
+    <p class="totalCount">Неизвестно</p>
+   
+   </div>
+  <div class="buyorignore">
+    <button class="ignore">Отменить</button>
+    <button class="tatalPaybtn">Заказать</button>
+  </div>
+     </div>
+
 
 
       <div class="card-parent">
@@ -314,9 +357,10 @@
       </div>
    
   
-  
+      
  
     </section>
+  
 <script type="module" src="./src/main.js"></script>
 <script src="./utils/sigin.js" type="module"></script>
 

@@ -14,7 +14,7 @@ export function Sigin() {
      const profileNick =document.querySelector('.profile-nick')
      const toProfile = document.querySelector('.toProfile');
      const toprofiletext =document.querySelector('.toprofile-text')
-    siginModal.style.display = 'none';
+
     signin.onclick = () => {
         if (profileNick.innerHTML === 'Войти') {
           siginModal.style.display = 'flex';

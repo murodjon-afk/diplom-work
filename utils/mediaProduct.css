@@ -240,8 +240,10 @@
       padding-left: 0px;
     }
     .similar-groceries ,.similar-furniture ,.similar-fragrances ,.similar-beauty  {
-      padding-bottom: 130px;
+      padding-bottom: 10px;
     }
+    .sim-groceries-parent ,.sim-furniture-parent,.sim-fragrances-parent,.sim-beauty-parent{
+      margin-bottom: 130px;}
     .product-container{
        padding-right: 150px;
     }
@@ -480,11 +482,12 @@
       .similar-groceries ,.similar-furniture ,.similar-fragrances ,.similar-beauty  {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); 
-        padding-bottom: 130px;
+        padding-bottom: 10px;
         gap: 0px;
         justify-items: center; 
       }
-      
+      .sim-groceries-parent ,.sim-furniture-parent,.sim-fragrances-parent,.sim-beauty-parent{
+        margin-bottom: 130px;}
     }
 
     @media (max-width: 374px){
@@ -527,10 +530,14 @@
       .similar-groceries ,.similar-furniture ,.similar-fragrances ,.similar-beauty  {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); 
-        padding-bottom: 130px;
+        padding-bottom: 10px;
         gap: 0px;
         padding: 10px;
         justify-items: center; 
+      }
+      .sim-groceries-parent ,.sim-furniture-parent,.sim-fragrances-parent,.sim-beauty-parent{
+        margin-bottom: 130px;
+        background-color: aqua;
       }
       .main-image{
         height: 250px;
@@ -628,8 +635,10 @@
           width: 150px;
         }
         .similar-groceries ,.similar-furniture ,.similar-fragrances ,.similar-beauty  {
-          padding-bottom: 130px;
+          padding-bottom: 10px;
         }
+        .sim-groceries-parent ,.sim-furniture-parent,.sim-fragrances-parent,.sim-beauty-parent{
+          margin-bottom: 130px;}
         .information-parent{
           width: 270px;
           font-size: 12px;
@@ -643,3 +652,629 @@
           align-items: center;
         }
       }
+
+
+      @media (max-width: 1079px){
+        .basket-pay ,.pay-parent {
+          width: 350px;
+ 
+        }
+
+        .btn-pay{
+          width: 280px;
+        }
+        .basket-item{
+          height: 70vh;
+        }
+      }
+
+      @media (max-width: 1000px){
+        .basket-pay  {
+         position: fixed;
+         bottom: 70px;
+        right: 0;
+ 
+        }
+
+        .pay-parent{
+          position: fixed;
+          bottom: 70px;
+          left: 0;
+        }
+
+
+ 
+      }
+      @media (max-width: 762px){
+        .basket-pay {
+          width: 90%;
+          position: fixed;
+          left: 50%;
+          transform: translateX(-50%);
+          height: 110px;
+          padding-bottom: 10px;
+      }
+
+      .btn-pay{
+        width: 90%;
+        height: 35px;
+        margin-bottom: 10px;
+      }
+      .basket-price {
+        padding-bottom: 0px;}
+        .price-info{
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          gap: 60px;
+        }
+        .pay-parent{
+          
+        display: none;
+        }
+   .basket-item{
+    margin-left: 10px;
+   }
+        .basket-text{
+     
+          padding-left: 10px;
+        }
+ 
+      }
+    
+      @media (max-width: 606px){
+        .basket-price{
+            font-size: 17px;
+        }
+
+        .basket-sale ,.basket-count2{
+          font-size: 13px;
+        }
+
+        .basket-pay{
+          height: 90px;
+        }
+        .btn-pay{
+          height: 25px;
+        }
+
+    } @media (max-width: 606px){
+      .basket-price{
+          font-size: 16px;
+      }
+
+      .basket-sale ,.basket-count2{
+        font-size: 13px;
+      }
+
+      .basket-pay{
+        height: 90px;
+      }
+      .btn-pay{
+        height: 25px;
+      }
+
+  }
+  @media (max-width: 542px){
+    .basket-price{
+        font-size: 15px;
+    }
+
+    .basket-sale ,.basket-count2{
+      font-size: 12px;
+    }
+
+    .basket-pay{
+      height: 70px;
+      display: flex;
+      gap: 5px;
+      padding: 0%;
+    }
+    .btn-pay{
+      height: 25px;
+    
+    }
+
+    .price-info{
+      display: flex;
+      gap: 20px;
+    }
+
+}
+@media (max-width: 410px){
+  .basket-price{
+      font-size: 15px;
+  }
+
+  .basket-sale ,.basket-count2{
+    font-size: 12px;
+  }
+
+  .basket-pay{
+    height: 70px;
+    display: flex;
+    gap: 5px;
+    padding: 0%;
+  }
+  .btn-pay{
+    height: 25px;
+  
+  }
+
+  .price-info{
+    display: flex;
+    gap: 10px;
+  }
+
+}
+
+
+@media (max-width: 382px){
+.basket-price{
+    font-size: 15px;
+}
+
+.basket-sale ,.basket-count2{
+  font-size: 12px;
+}
+
+.basket-pay{
+  height: 70px;
+  display: flex;
+  gap: 5px;
+  padding: 0%;
+}
+.btn-pay{
+  height: 25px;
+
+}
+
+.price-info{
+  display: flex;
+  gap: 5px;
+}
+
+}
+
+
+@media (max-width: 366px){
+.basket-price{
+  font-size: 14px;
+}
+
+.basket-sale ,.basket-count2{
+font-size: 11px;
+}
+
+.basket-pay{
+height: 70px;
+display: flex;
+gap: 5px;
+padding: 0%;
+}
+.btn-pay{
+height: 25px;
+
+}
+
+.price-info{
+display: flex;
+gap: 5px;
+}
+
+}
+
+@media (max-width: 366px){
+.basket-price{
+font-size: 13px;
+}
+
+.basket-sale ,.basket-count2{
+font-size: 10px;
+}
+
+.basket-pay{
+height: 70px;
+display: flex;
+gap: 5px;
+padding: 0%;
+}
+.btn-pay{
+height: 25px;
+
+}
+
+.price-info{
+display: flex;
+gap: 5px;
+}
+
+}
+@media (max-width: 1195px) {
+  .catalog {
+    display: none;
+  }
+
+ .media-menu{
+  display: flex;
+ }
+
+  .profile-info {
+    display: none;
+    padding-bottom: 10px;
+  }
+}
+
+@media (max-width: 689px) {
+  .media-menu{
+    display: flex;
+    gap: 80px;
+   }
+
+}
+@media (max-width: 612px) {
+  .media-menu{
+    display: flex;
+    gap: 60px;
+   }
+
+}
+
+@media (max-width: 529px) {
+  .media-menu{
+    display: flex;
+    gap: 50px;
+   }
+
+}
+@media (max-width: 484px) {
+  .media-menu{
+    display: flex;
+    gap: 35px;
+   }
+
+}
+@media (max-width: 426px) {
+  .media-menu{
+    display: flex;
+    gap: 25px;
+   }
+
+}
+@media (max-width: 389px) {
+  .media-menu{
+    display: flex;
+    gap: 20px;
+   }
+
+}
+@media (max-width: 389px) {
+  .media-menu{
+    display: flex;
+    gap: 15px;
+   }
+
+}
+@media (max-width: 389px) {
+  .media-menu{
+    display: flex;
+    gap: 10px;
+   }
+
+}
+
+
+@media (max-width: 689px) {
+  .media-menu{
+    display: flex;
+    gap: 100px;
+   }
+
+}
+@media (max-width: 612px) {
+  .media-menu{
+    display: flex;
+    gap: 60px;
+   }
+
+}
+
+@media (max-width: 529px) {
+  .media-menu{
+    display: flex;
+    gap: 50px;
+   }
+
+}
+@media (max-width: 484px) {
+  .media-menu{
+    display: flex;
+    gap: 35px;
+   }
+
+}
+@media (max-width: 426px) {
+  .media-menu{
+    display: flex;
+    gap: 25px;
+   }
+
+}
+@media (max-width: 389px) {
+  .media-menu{
+    display: flex;
+    gap: 20px;
+   }
+
+}
+@media (max-width: 389px) {
+  .media-menu{
+    display: flex;
+    gap: 15px;
+   }
+
+}
+@media (max-width: 389px) {
+  .media-menu{
+    display: flex;
+    gap: 10px;
+   }
+
+}
+
+
+
+@media (max-width: 524px){
+  .payment-module{
+    width: 400px;
+    height: 180px;
+  }
+
+  
+.forMoney img{
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+}
+
+.forUzCard img{
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+}
+
+.forMasterCard img{
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+}
+
+.forHumo img{
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+}
+
+}
+
+
+
+@media (max-width: 420px){
+  .payment-module{
+    width: 350px;
+    height: 180px;
+  }
+
+  
+.forMoney img{
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+}
+
+.forUzCard img{
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+}
+
+.forMasterCard img{
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+}
+
+.forHumo img{
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+}
+
+
+.forMoney p {
+  color: rgb(163, 163, 163);
+  font-size: 10px;
+   }
+   .forHumo p {
+     color: rgb(163, 163, 163);
+     font-size: 10px;
+      }
+  .forMasterCard p{
+   color: rgb(163, 163, 163);
+   font-size: 10px;
+  }
+   .forUzCard p {
+     color: rgb(163, 163, 163);
+     font-size: 10px;
+      }
+ 
+
+}
+
+
+@media (max-width: 359px){
+  .payment-module{
+    width: 300px;
+    height: 170px;
+  }
+
+  
+.forMoney img{
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+}
+
+.forUzCard img{
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+}
+
+.forMasterCard img{
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+}
+
+.forHumo img{
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+}
+
+
+.forMoney p {
+  color: rgb(163, 163, 163);
+  font-size: 10px;
+   }
+   .forHumo p {
+     color: rgb(163, 163, 163);
+     font-size: 10px;
+      }
+  .forMasterCard p{
+   color: rgb(163, 163, 163);
+   font-size: 10px;
+  }
+   .forUzCard p {
+     color: rgb(163, 163, 163);
+     font-size: 10px;
+      }
+ 
+
+}
+
+
+@media (max-width: 528px){
+  .order-block{
+    width: 400px;
+  }
+
+  .pay-input{
+    width: 380px;
+    background-color: #dde4ea;
+    border: none;
+    height: 40px;
+    border-radius: 5px;
+    padding-left: 5px;
+    margin: 0% auto;
+  }
+  .card-data ,.data-year{
+    width: 50px;
+    background-color: #dde4ea;
+    border: none;
+    height: 40px;
+    border-radius: 5px;
+    padding-left: 5px;
+    margin: 0% auto;
+  }
+  .card-password{
+    width: 180px;
+    background-color: #dde4ea;
+    border: none;
+    height: 40px;
+    border-radius: 5px;
+    padding-left: 5px;
+    margin: 0% auto;
+  
+
+}}
+
+
+
+
+
+@media (max-width: 420px){
+  .order-block{
+    width: 350px;
+  }
+
+  .pay-input{
+    width: 330px;
+    background-color: #dde4ea;
+    border: none;
+    height: 40px;
+    border-radius: 5px;
+    padding-left: 5px;
+    margin: 0% auto;
+  }
+  .card-data ,.data-year{
+    width: 50px;
+    background-color: #dde4ea;
+    border: none;
+    height: 40px;
+    border-radius: 5px;
+    padding-left: 5px;
+    margin: 0% auto;
+  }
+  .card-password{
+    width: 130px;
+    background-color: #dde4ea;
+    border: none;
+    height: 40px;
+    border-radius: 5px;
+    padding-left: 5px;
+    margin: 0% auto;
+  
+
+}}
+
+
+
+
+
+@media (max-width: 360px){
+  .order-block{
+    width: 300px;
+  }
+
+  .pay-input{
+    width: 270px;
+    background-color: #dde4ea;
+    border: none;
+    height: 40px;
+    border-radius: 5px;
+    padding-left: 5px;
+    margin: 0% auto;
+  }
+  .card-data ,.data-year{
+    width: 45px;
+    background-color: #dde4ea;
+    border: none;
+    height: 40px;
+    border-radius: 5px;
+    padding-left: 5px;
+    margin: 0% auto;
+  }
+  .card-password{
+    width: 70px;
+    background-color: #dde4ea;
+    border: none;
+    height: 40px;
+    border-radius: 5px;
+    padding-left: 5px;
+    margin: 0% auto;
+  
+
+}}

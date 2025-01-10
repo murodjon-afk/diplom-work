@@ -1,6 +1,6 @@
 export function createCard(item) {
 
-    
+    const datayear =document.querySelector('.data-year')
     const div = document.querySelector('.search-parent');
     const basketCount3 =document.querySelector('.basket-count3')
     const menucatalog =document.querySelector('.menu-catalog');
@@ -61,7 +61,24 @@ const basketCount =document.querySelector('.basket-count');
 const basketCount2 =document.querySelector('.basket-count2');
 const btnPay = document.querySelector('.btn-pay');
 const globalBtn = document.querySelector('.global-page');
-
+const paymentModule =document.querySelector('.payment-module');
+const orderBlock =document.querySelector('.order-block')
+const forMoney = document.querySelector('.forMoney')
+const forUzCard = document.querySelector('.forUzCard')
+const forMaster = document.querySelector('.forMasterCard')
+const forHumo =document.querySelector('.forHumo')
+const infoPayContainer = document.querySelector('.info-pay');
+const totalPriceElement = document.querySelector('.totalPrice');
+const totalCountElement = document.querySelector('.totalCount');
+const totalSaleElement = document.querySelector('.totalSale');
+const totalPayButton = document.querySelector('.tatalPaybtn');
+const ignore = document.querySelector('.ignore')
+const payCansel = document.querySelector('.pay-cansel')
+const canselProduct=document.querySelector('.cansel-product')
+const cardNumberInput = document.querySelector('#card-number');     
+const cardPasswordInput = document.querySelector('.card-password');
+const cardDateInput = document.querySelector('.card-data');  
+const btnpayproduct =document.querySelector('.btn-pay-product')
 
 searchingbtn.onclick=()=>{
     window.location.href='./index.html'
@@ -764,6 +781,7 @@ console.log("Total price:", total);
 const basket2 =document.querySelector('.basket2')
 basketBtn.onclick = () => {
 
+
     if ( searchinglobby.style.display==='block') {
 
         searchinglobby.style.display='none'
@@ -776,6 +794,7 @@ basketBtn.onclick = () => {
     console.log(basketItem);
     
     tofovorite.innerHTML='Избранное';
+    
     if (!basketItems || basketItems.length === 0) {
        nothingBasket.style.display='flex';
        basket2.style.display='none';
@@ -1313,12 +1332,115 @@ techShowMore.onclick=()=>{
 
 let storedLength = localStorage.getItem('basketLength');
 
-
 basketCount.innerHTML = storedLength || 0;
 basketCount2.innerHTML = `Итого товаров: ${storedLength}`;
 basketCount3.innerHTML = storedLength || 0;
 card.setAttribute('id', item.id);
+btnPay.onclick=()=>{
+    paymentModule.style.display='block';
+    overlay.style.display='block'
+    totalPriceElement.innerHTML=basketPrice.innerHTML;
+    totalSaleElement.innerHTML= basketSale.innerHTML;
+    totalCountElement.innerHTML=basketCount2.innerHTML
+}
+payCansel.onclick=()=>{
+    paymentModule.style.display='none'
+    overlay.style.display='none'
+}
+forMoney.onclick=()=>{
+        paymentModule.style.display='none';
+        infoPayContainer.style.display='block'
+}
+ignore.onclick=()=>{
+    infoPayContainer.style.display='none';
+    overlay.style.display='none'
+}
 
+forHumo.onclick=()=>{
+    paymentModule.style.display='none';
+    orderBlock.style.display='block'
+}
+forMaster.onclick=()=>{
+    paymentModule.style.display='none';
+    orderBlock.style.display='block'
+}
+
+forUzCard.onclick=()=>{
+    paymentModule.style.display='none';
+    orderBlock.style.display='block'
+}
+canselProduct.onclick=()=>{
+    orderBlock.style.display='none';
+    overlay.style.display='none';
+
+}
+
+btnpayproduct.onclick = () => {
+    const cardValue = cardNumberInput.value.trim(); 
+    const cardPasswordValue = cardPasswordInput.value.trim();
+    const cardDateValue = cardDateInput.value.trim();
+    const datayearValue =datayear.value;
+    if (cardValue.length !== 16) {
+        alert('Номер карты должен содержать ровно 16 цифр!');
+        return; 
+    }
+    if (cardPasswordValue.length !== 4) {
+        alert('Пароль должен содержать ровно 4 цифры!');
+        return;
+    }
+    const regex = /^[0-9]{2}$/;
+    const monthMatch = cardDateValue.match(regex);
+    if (!monthMatch || parseInt(cardDateValue) < 1 || parseInt(cardDateValue) > 12) {
+        alert('Месяц должен быть от 01 до 12!');
+        return;
+    }
+    const yearMatch = datayearValue.match(regex);
+    if (!yearMatch) {
+        alert('Год должен быть в формате YY!');
+        return;
+    }
+    alert('Дата принята! ✅');
+    orderBlock.style.display='none'
+    infoPayContainer.style.display='block'
+};
+totalPayButton.onclick=()=>{
+const basketItems = JSON.parse(localStorage.getItem('basketItems'));
+const userPhone = localStorage.getItem('userPhone');
+
+if (basketItems && userPhone) {
+    fetch('http://localhost:3001/users')
+        .then(response => response.json())
+        .then(users => {
+            const user = users.find(user => user.phone === userPhone);
+            if (user) {
+                user.orders = [...user.orders, ...basketItems];
+                fetch(`http://localhost:3001/users/${user.id}`, {
+                    method: 'PATCH',  
+                    body: JSON.stringify({
+                        orders: user.orders 
+                    })
+                })
+                .then(response => response.json())
+                .then(updatedUser => {
+                    console.log('Данные обновлены', updatedUser);
+                    localStorage.removeItem('basketItems'); 
+                    localStorage.removeItem('basketLength'); 
+                    alert('Корзина добавлена в заказ!');
+                })  .catch(error => {
+                    console.error('Ошибка обновления данных:', error);
+                    alert('Не удалось обновить данные');
+                });
+            } else {
+                alert('Пользователь с таким номером телефона не найден!');
+            }
+        })
+        .catch(error => {
+            console.error('Ошибка при получении пользователей:', error);
+            alert('Не удалось получить данные пользователей');
+        });
+}
+
+}
 
     return card;
 }
