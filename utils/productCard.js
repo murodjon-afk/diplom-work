@@ -41,7 +41,7 @@ globalBtn.onclick=()=>{
 toPage2.onclick=()=>{
     window.location.href=`http://127.0.0.1:5500/utils/product.html?id=${productId}`
 }
- 
+
 
 toPage.onclick=()=>{
     window.location.href=`http://127.0.0.1:5500/utils/product.html?id=${productId}`
@@ -196,11 +196,10 @@ const productId = url.searchParams.get('id')
         element.onclick = redirectToProduct;
     });
 
-    input.addEventListener("input", function () {
-    alert('К Сожелению Поиск Присутствует в Главном странице')
-    window.location.href='./index.html'
-    });
-    
+    input.oninput=()=>{
+        alert('К сожиление Поиск Присуствует в Главном странице')
+        window.location.href='/index.html'
+    }
    const basketItem = document.querySelector('.basket-item');
    toLove.className = 'toLove'
     oldPrice.innerHTML = `${item.price}$`
@@ -494,10 +493,15 @@ export function createProductCard(item) {
     const storedPhone = localStorage.getItem('userPhone'); 
     const basketCount =document.querySelector('.basket-count');
     const moreinfo = document.querySelector('.more-info');
+    const addBasket = document.querySelector('.add-basket')
+    const addFovorite = document.querySelector('.add-fovorite')
     let savedItems = JSON.parse(localStorage.getItem('savedItems')) || [];
     
     moreinfo.onclick = () => {
-        
+        moreinfo.style.backgroundColor = 'white';
+        moreinfo.style.color = 'purple';
+        moreinfo.style.border = '1.5px solid purple';
+        moreinfo.innerHTML = 'В Избранных';
       const existingCard = savedItems.find(savedItem => savedItem.id === item.id);
       if (!existingCard) {
         savedItems.push(item);
@@ -505,6 +509,19 @@ export function createProductCard(item) {
       }
     };
     
+
+    addFovorite.onclick = () => {
+        addFovorite.style.backgroundColor = 'white';
+        addFovorite.style.color = 'purple';
+        addFovorite.style.border = '1.5px solid purple';
+        addFovorite.innerHTML = 'В Избранных';
+        const existingCard = savedItems.find(savedItem => savedItem.id === item.id);
+        if (!existingCard) {
+          savedItems.push(item);
+          localStorage.setItem('savedItems', JSON.stringify(savedItems));
+        }
+      };
+      
 
     console.log(item);
 
@@ -605,14 +622,14 @@ export function createProductCard(item) {
   console.log(item.id);
   
 
- 
+  const basketCount2 =document.querySelector('.basket-count2');
    
     img.className = 'thubnail';
     productThumnail.append(img, img2, img3, img4, img5);
     addtocart.onclick = () => {
         addtocart.style.backgroundColor = 'white';
         addtocart.style.color = 'purple';
-        addtocart.style.border = '2px solid purple';
+        addtocart.style.border = '1.5px solid purple';
         addtocart.innerHTML = 'В Корзине';
         const quantityValue = quantityInput.value;
         const productId = item.id;
@@ -635,8 +652,44 @@ export function createProductCard(item) {
                 currentBasket.push(basketData);
                 localStorage.setItem('basketItems', JSON.stringify(currentBasket));
                 basketCount.innerHTML = currentBasket.length;
+                basketCount2.innerHTML = currentBasket.length;
              
                 const length =  currentBasket.length;
+                localStorage.setItem('basketLength', length);   
+            
+            }
+        }
+    }
+
+    addBasket.onclick = () => {
+        addBasket.style.backgroundColor = 'white';
+        addBasket.style.color = 'purple';
+        addBasket.style.border = '1.5px solid purple';
+        addBasket.innerHTML = 'В Корзине';
+        const quantityValue = quantityInput.value;
+        const productId = item.id;
+        
+        if (addBasket.innerHTML === 'В Корзине') {
+            const currentBasket = JSON.parse(localStorage.getItem('basketItems')) || [];
+            const basketItemExists = currentBasket.some(item => item.id === productId);
+    
+            if (!basketItemExists) {
+                const basketp = shortNewPrice * quantityValue;
+                const basketData = {
+                    id: productId,
+                    title: item.title || 'Без названия',
+                    price: basketp,
+                    oldPrice: item.price,
+                    image: item.thumbnail || 'default.jpg',
+                    stock: item.stock,
+                    quantity: 1
+                };
+                currentBasket.push(basketData);
+                localStorage.setItem('basketItems', JSON.stringify(currentBasket));
+                basketCount.innerHTML = currentBasket.length ;
+                basketCount2.innerHTML = currentBasket.length ;
+             
+                const length =  currentBasket.length +1;
                 localStorage.setItem('basketLength', length);   
             
             }
