@@ -1,5 +1,5 @@
-export function createCard(item) {
-
+export function createCard(item) { 
+    const signin = document.querySelector('.signin')
     const datayear =document.querySelector('.data-year')
     const div = document.querySelector('.search-parent');
     const basketCount3 =document.querySelector('.basket-count3')
@@ -1337,11 +1337,17 @@ basketCount2.innerHTML = `Итого товаров: ${storedLength}`;
 basketCount3.innerHTML = storedLength || 0;
 card.setAttribute('id', item.id);
 btnPay.onclick=()=>{
+if (signin.innerHTML==='Войти') {
+    alert('В первый очередь вам Необходимо Зарегистрироваться на сайте');
+    window.location.href='./index.html'
+}
+else{
     paymentModule.style.display='block';
     overlay.style.display='block'
     totalPriceElement.innerHTML=basketPrice.innerHTML;
     totalSaleElement.innerHTML= basketSale.innerHTML;
     totalCountElement.innerHTML=basketCount2.innerHTML
+}
 }
 payCansel.onclick=()=>{
     paymentModule.style.display='none'

@@ -1,6 +1,6 @@
 
 export function createSimilar(item) {
-    
+    const signin = document.querySelector('.signin')
     const datayear =document.querySelector('.data-year')
     const nothingBasket =document.querySelector('.nothing-basket')
     const addBasket = document.querySelector('.add-basket')
@@ -799,11 +799,16 @@ window.location.href='/index.html'
 
 
 btnPay.onclick=()=>{
+if (signin.innerHTML === 'Войти') {
+    alert('В Первую Очеред вам Необходима за регистрироваться на сайте')
+    window.location.href='/index.html'
+}else{
     paymentModule.style.display='block';
     overlay.style.display='block'
     totalPriceElement.innerHTML=basketPrice.innerHTML;
     totalSaleElement.innerHTML= basketSale.innerHTML;
     totalCountElement.innerHTML=basketCount2.innerHTML
+}
 }
 payCansel.onclick=()=>{
     paymentModule.style.display='none'
